@@ -116,13 +116,13 @@ export const SwapActions = () => {
       if (app.balances) {
         setIsLoaded(true);
         // Set default pair to ETH -> BTC
-        console.log("app.balances: ",app.balances)
+        console.log("app.balances: ", app.balances);
         // get balance ETH of paired wallets
         const ethBalance = app.balances.find(
-          (balance: { symbol: string; }) => balance.symbol === "ETH"
+          (balance: { symbol: string }) => balance.symbol === "ETH"
         );
-        console.log("ethBalance: ",ethBalance)
-        if(ethBalance){
+        console.log("ethBalance: ", ethBalance);
+        if (ethBalance) {
           console.log("ethBalance: ", ethBalance);
           const inputValue = {
             address: ethBalance.address,

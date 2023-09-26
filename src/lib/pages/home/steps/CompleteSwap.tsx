@@ -14,7 +14,11 @@ import {
   Heading,
   CardFooter,
   CardHeader,
-  CardBody, VStack, Flex, Box, Progress
+  CardBody,
+  VStack,
+  Flex,
+  Box,
+  Progress,
 } from "@chakra-ui/react";
 import { AddIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
 
