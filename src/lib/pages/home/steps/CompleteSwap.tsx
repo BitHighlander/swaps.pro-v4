@@ -22,7 +22,9 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
 
+// @ts-ignore
 import completedGif from "lib/assets/gif/completed.gif"; // Import the GIF here
+// @ts-ignore
 import shiftingGif from "lib/assets/gif/shifting.gif";
 
 const BeginSwap = () => {
