@@ -43,6 +43,7 @@ const BeginSwap = () => {
   });
   return (
     <div>
+      Waiting for confirmations...
       <img src={shiftingGif} alt="shiftingGif" />
     </div>
   );
