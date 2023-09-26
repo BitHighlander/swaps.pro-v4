@@ -20,19 +20,19 @@ import { SettingsIcon, ArrowUpDownIcon, AddIcon } from "@chakra-ui/icons";
 // @ts-ignore
 import { usePioneer } from "@pioneer-platform/pioneer-react";
 // @ts-ignore
+import { useSwap } from "swapkit-provider";
+// @ts-ignore
 import backgroundImage from "lib/assets/background/thorfox.webp"; // Adjust the path
 import BeginSwap from "./steps/BeginSwap"; // Updated import here
 import CompleteSwap from "./steps/CompleteSwap"; // Updated import here
 import SelectAssets from "./steps/SelectAssets"; // Updated import here
 
 const Home = () => {
-  const { state } = usePioneer();
-  const { api, app, context, assetContext, blockchainContext, pubkeyContext } =
-    state;
-
+  const { state: pioneerState } = usePioneer();
+  const { state: swapKitState } = useSwap();
+  const { swapKit } = swapKitState;
   //steps
   const [step, setStep] = useState(0);
-
   const [address, setAddress] = useState("");
   const [modalType, setModalType] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -50,10 +50,23 @@ const Home = () => {
     icon: "https://pioneers.dev/coins/bitcoin.png",
   });
 
+  const onStart = async function () {
+    try {
+      console.log("swapKit: ", swapKit);
+      if (swapKit) {
+        // console.log("swapKit.connectWallets: ", swapKit.connectedWallets);
+        // console.log("swapKit.connectWallets: ", swapKit.connectWallets);
+        const chains = Object.keys(swapKit.connectedWallets);
+        console.log("chains", chains);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   useEffect(() => {
-    console.log("pubkeyContext: ", pubkeyContext);
-    setAddress(pubkeyContext.master || pubkeyContext.pubkey);
-  }, [pubkeyContext]);
+    onStart();
+  }, [swapKit && swapKit.connectWallets]);
 
   const openModal = (type: any) => {
     setModalType(type);

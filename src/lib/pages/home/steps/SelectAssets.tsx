@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   useDisclosure,
@@ -16,10 +16,19 @@ import {
   Progress,
 } from "@chakra-ui/react";
 import { SettingsIcon, ArrowUpDownIcon, AddIcon } from "@chakra-ui/icons";
+// @ts-ignore
+import { usePioneer } from "@pioneer-platform/pioneer-react";
+// @ts-ignore
+import { useSwap } from "swapkit-provider";
 
 const BeginSwap = () => {
+  const { state: pioneerState } = usePioneer();
+  const { state: swapKitState } = useSwap();
+  const { swapKit } = swapKitState;
   const [modalType, setModalType] = useState("");
+  const [chains, setChains] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const [input, setInput] = useState({
     address: "",
     symbol: "ETH",
@@ -33,6 +42,35 @@ const BeginSwap = () => {
     caip: "",
     icon: "https://pioneers.dev/coins/bitcoin.png",
   });
+
+  const onStart = async function () {
+    try {
+      console.log("swapKit: ", swapKit);
+      if (swapKit) {
+        // console.log("swapKit.connectWallets: ", swapKit.connectedWallets);
+        console.log("swapKit.connectWallets: ", swapKit.connectedWallets);
+        console.log(
+          "swapKit.connectWallets: ",
+          JSON.stringify(swapKit.connectedWallets)
+        );
+        console.log("swapKit.connectedChains: ", swapKit.connectedChains);
+        console.log(
+          "swapKit.connectedChains: ",
+          JSON.stringify(swapKit.connectedChains)
+        );
+        const chains = Object.keys(swapKit.connectedWallets);
+        console.log("chains", chains);
+        // @ts-ignore
+        setChains(chains);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  useEffect(() => {
+    onStart();
+  }, [swapKit && swapKit.connectWallets]);
 
   const openModal = (type: any) => {
     setModalType(type);
@@ -48,9 +86,8 @@ const BeginSwap = () => {
           <ModalCloseButton />
           <ModalBody>
             {/* Render content based on modalType */}
-            {modalType === "Select Input" && <div>input</div>}
+            {modalType === "Select Input" && <div>{chains.toString()}</div>}
             {modalType === "Select Output" && <div>output</div>}
-            {modalType === "settings" && <div>settings</div>}
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" onClick={onClose}>

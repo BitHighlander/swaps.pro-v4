@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { ChakraProvider, useColorMode } from "@chakra-ui/react";
 // @ts-ignore
+import { SwapProvider } from "swapkit-provider";
+// @ts-ignore
 import { PioneerProvider } from "@pioneer-platform/pioneer-react";
 // @ts-ignore
 import { BrowserRouter as Router } from "react-router-dom";
@@ -23,15 +25,17 @@ const ForceDarkMode = ({ children }) => {
 const App = () => {
   return (
     <PioneerProvider>
-      <ChakraProvider theme={theme}>
-        <ForceDarkMode>
-          <Router>
-            <Layout>
-              <Routings />
-            </Layout>
-          </Router>
-        </ForceDarkMode>
-      </ChakraProvider>
+      <SwapProvider>
+        <ChakraProvider theme={theme}>
+          <ForceDarkMode>
+            <Router>
+              <Layout>
+                <Routings />
+              </Layout>
+            </Router>
+          </ForceDarkMode>
+        </ChakraProvider>
+      </SwapProvider>
     </PioneerProvider>
   );
 };
