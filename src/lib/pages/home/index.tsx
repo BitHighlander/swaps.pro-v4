@@ -70,7 +70,7 @@ const Home = () => {
       case 2:
         return <CompleteSwap />;
       default:
-        setStep(0)
+        setStep(0);
         return <BeginSwap />;
     }
   };
@@ -127,8 +127,7 @@ const Home = () => {
           bg="black"
           p="2rem"
         >
-
-      {renderStepContent()}
+          {renderStepContent()}
         </Flex>
       </VStack>
       <Flex
@@ -141,7 +140,10 @@ const Home = () => {
       >
         <Button
           onClick={() => setStep((prevStep) => prevStep + 1)}
-          leftIcon={<AddIcon />} colorScheme="blue" mt={4}>
+          leftIcon={<AddIcon />}
+          colorScheme="blue"
+          mt={4}
+        >
           {" "}
           {/* Add mt for margin */}
           Continue
