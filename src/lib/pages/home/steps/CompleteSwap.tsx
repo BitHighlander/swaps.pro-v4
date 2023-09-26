@@ -1,26 +1,4 @@
-import React, { useState } from "react";
-import {
-  Avatar,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  Button,
-  Card,
-  Stack,
-  Heading,
-  CardFooter,
-  CardHeader,
-  CardBody,
-  VStack,
-  Flex,
-  Box,
-  Progress,
-} from "@chakra-ui/react";
-import { AddIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
+import React, { useState, useEffect } from "react";
 
 // @ts-ignore
 import completedGif from "lib/assets/gif/completed.gif"; // Import the GIF here
@@ -28,23 +6,32 @@ import completedGif from "lib/assets/gif/completed.gif"; // Import the GIF here
 import shiftingGif from "lib/assets/gif/shifting.gif";
 
 const BeginSwap = () => {
-  const [input, setInput] = useState({
-    address: "",
-    symbol: "ETH",
-    caip: "",
-    amount: "",
-    icon: "https://pioneers.dev/coins/ethereum.png",
-  });
-  const [output, setOutput] = useState({
-    address: "",
-    symbol: "BTC",
-    caip: "",
-    icon: "https://pioneers.dev/coins/bitcoin.png",
-  });
+  const [isCompleted, setIsCompleted] = useState(false);
+  const transactionUrl = "https://etherscan.io/tx/0x..."; // Replace with your transaction URL
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsCompleted(true);
+    }, 4000);  // 4 seconds timeout
+
+    return () => clearTimeout(timeoutId); // Clear the timeout if the component is unmounted
+  }, []);
+
   return (
     <div>
-      Waiting for confirmations...
-      <img src={shiftingGif} alt="shiftingGif" />
+      {isCompleted ? (
+        <div>
+          <img src={completedGif} alt="completedGif" />
+          <a href={transactionUrl} target="_blank" rel="noopener noreferrer">
+            View Transaction
+          </a>
+        </div>
+      ) : (
+        <div>
+          Waiting for confirmations...
+          <img src={shiftingGif} alt="shiftingGif" />
+        </div>
+      )}
     </div>
   );
 };
