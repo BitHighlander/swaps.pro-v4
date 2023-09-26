@@ -1,0 +1,46 @@
+import React, { useState } from "react";
+import {
+  Avatar,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button,
+  Card,
+  Stack,
+  Heading,
+  CardFooter,
+  CardHeader,
+  CardBody, VStack, Flex, Box, Progress
+} from "@chakra-ui/react";
+import { AddIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
+
+import completedGif from "lib/assets/gif/completed.gif"; // Import the GIF here
+import shiftingGif from "lib/assets/gif/shifting.gif";
+import calculating from "lib/assets/gif/calculating.gif"; // Import the GIF here
+
+const BeginSwap = () => {
+  const [input, setInput] = useState({
+    address: "",
+    symbol: "ETH",
+    caip: "",
+    amount: "",
+    icon: "https://pioneers.dev/coins/ethereum.png",
+  });
+  const [output, setOutput] = useState({
+    address: "",
+    symbol: "BTC",
+    caip: "",
+    icon: "https://pioneers.dev/coins/bitcoin.png",
+  });
+  return (
+    <div>
+      <img src={shiftingGif} alt="shiftingGif" />
+    </div>
+  );
+};
+
+export default BeginSwap;
