@@ -84,8 +84,6 @@ const Home = () => {
           <ModalCloseButton />
           <ModalBody>
             {/* Render content based on modalType */}
-            {modalType === "Select Input" && <div>input</div>}
-            {modalType === "Select Ouput" && <div>output</div>}
             {modalType === "settings" && <div>settings</div>}
           </ModalBody>
           <ModalFooter>

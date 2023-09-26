@@ -20,7 +20,6 @@ import { AddIcon, ArrowUpDownIcon } from "@chakra-ui/icons";
 
 import completedGif from "lib/assets/gif/completed.gif"; // Import the GIF here
 import shiftingGif from "lib/assets/gif/shifting.gif";
-import calculating from "lib/assets/gif/calculating.gif"; // Import the GIF here
 
 const BeginSwap = () => {
   const [input, setInput] = useState({

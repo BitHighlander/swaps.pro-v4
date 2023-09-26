@@ -14,9 +14,9 @@ export const theme = extendTheme({
     body: "Plus Jakarta Sans, sans-serif",
   },
   components: {
-    baseStyle: {
-      background: "black", // Set the background color to black
-    },
+    // baseStyle: {
+    //   background: "black", // Set the background color to black
+    // },
   },
   styles: {
     global: (props: GlobalStyleProps) => ({
