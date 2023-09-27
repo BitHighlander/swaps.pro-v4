@@ -39,7 +39,7 @@
     "react-icons": "^4.8.0",
     "react-qr-code": "^2.0.11",
     "react-router-dom": "^6.10.0",
-    "swapkit-provider": "0.2.29"
+    "swapkit-provider": "0.2.30"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.6.1",

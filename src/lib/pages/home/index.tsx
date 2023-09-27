@@ -30,11 +30,11 @@ import SelectAssets from "./steps/SelectAssets"; // Updated import here
 const Home = () => {
   const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
-  const { swapKit } = swapKitState;
+  const { swapKit, walletData } = swapKitState;
   //steps
   const [step, setStep] = useState(0);
   const [address, setAddress] = useState("");
-  const [modalType, setModalType] = useState("");
+  const [modalType, setModalType] = useState({});
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [input, setInput] = useState({
     address: "",
@@ -58,6 +58,7 @@ const Home = () => {
         // console.log("swapKit.connectWallets: ", swapKit.connectWallets);
         const chains = Object.keys(swapKit.connectedWallets);
         console.log("chains", chains);
+
       }
     } catch (e) {
       console.error(e);
@@ -77,7 +78,7 @@ const Home = () => {
     console.log("step: ", step);
     switch (step) {
       case 0:
-        return <SelectAssets />;
+        return <SelectAssets walletData={walletData} />;
       case 1:
         return <BeginSwap />;
       case 2:

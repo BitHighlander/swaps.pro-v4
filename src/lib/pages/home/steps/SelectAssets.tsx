@@ -20,8 +20,9 @@ import { SettingsIcon, ArrowUpDownIcon, AddIcon } from "@chakra-ui/icons";
 import { usePioneer } from "@pioneer-platform/pioneer-react";
 // @ts-ignore
 import { useSwap } from "swapkit-provider";
-
-const BeginSwap = () => {
+import BlockchainSelect from "lib/components/AssetSelect";
+// @ts-ignore
+const BeginSwap = ({ walletData }) => {
   const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
   const { swapKit } = swapKitState;
@@ -86,7 +87,14 @@ const BeginSwap = () => {
           <ModalCloseButton />
           <ModalBody>
             {/* Render content based on modalType */}
-            {modalType === "Select Input" && <div>{chains.toString()}</div>}
+            {modalType === "Select Input" && (
+              <div>
+                {chains.toString()}
+                <br />
+                <BlockchainSelect></BlockchainSelect>
+                {/*{JSON.stringify(walletData)}*/}
+              </div>
+            )}
             {modalType === "Select Output" && <div>output</div>}
           </ModalBody>
           <ModalFooter>

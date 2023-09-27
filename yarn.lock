@@ -11326,10 +11326,10 @@ swagger-client@^3.19.8:
     traverse "~0.6.6"
     url "~0.11.0"
 
-swapkit-provider@0.2.29:
-  version "0.2.29"
-  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.29.tgz#85276b4e1600340a4962b4c57df5a0cd43147a9c"
-  integrity sha512-8EIoD9aogQBsGjbPz/uZqWdM3xqEKNS3je1ehyrrM2cDk2JBhAMLHpGRDfahRL6OOpkAlCCI9p1RlWQWR2RnIQ==
+swapkit-provider@0.2.30:
+  version "0.2.30"
+  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.30.tgz#4708ea49bdea73f8decae14108cb572297399ee2"
+  integrity sha512-RBVtsEIMohvk0Z34ccm8Yi5OtwRRqwRfL6y91S+84Z0vOaM1AVT4NlXSwmvz+M2Ga2ApomDj2x6eQIC2MTrRAw==
   dependencies:
     "@chakra-ui/icons" "^2.0.19"
     "@chakra-ui/react" "^2.6.0"
@@ -11347,6 +11347,7 @@ swapkit-provider@0.2.29:
     "@pioneer-platform/ledger" latest
     "@pioneer-platform/okx" latest
     "@pioneer-platform/pioneer-client" "^9.0.6"
+    "@pioneer-platform/pioneer-coins" "^8.1.84"
     "@pioneer-platform/swapkit-api" latest
     "@pioneer-platform/swapkit-core" latest
     "@pioneer-platform/swapkit-entities" latest
