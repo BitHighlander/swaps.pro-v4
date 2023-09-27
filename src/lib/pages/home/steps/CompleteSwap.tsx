@@ -12,7 +12,7 @@ const BeginSwap = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setIsCompleted(true);
-    }, 4000);  // 4 seconds timeout
+    }, 4000); // 4 seconds timeout
 
     return () => clearTimeout(timeoutId); // Clear the timeout if the component is unmounted
   }, []);

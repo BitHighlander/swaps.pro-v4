@@ -34,7 +34,7 @@ const Home = () => {
   //steps
   const [step, setStep] = useState(0);
   const [address, setAddress] = useState("");
-  const [modalType, setModalType] = useState({});
+  const [modalType, setModalType] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [input, setInput] = useState({
     address: "",
@@ -58,7 +58,6 @@ const Home = () => {
         // console.log("swapKit.connectWallets: ", swapKit.connectWallets);
         const chains = Object.keys(swapKit.connectedWallets);
         console.log("chains", chains);
-
       }
     } catch (e) {
       console.error(e);

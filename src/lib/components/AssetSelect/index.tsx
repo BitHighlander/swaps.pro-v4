@@ -64,10 +64,12 @@ export default function BlockchainSelect() {
           allAssets.push(asset);
         }
       }
+      // @ts-ignore
       setAssets(allAssets);
     }
   }, [walletData]);
 
+  // @ts-ignore
   const handleSelectClick = async (asset) => {
     try {
       // Your logic here
@@ -75,7 +77,7 @@ export default function BlockchainSelect() {
       console.error(e);
     }
   };
-
+  // @ts-ignore
   const onSearch = async (searchQuery) => {
     try {
       // Your logic here
@@ -83,7 +85,7 @@ export default function BlockchainSelect() {
       console.error(e);
     }
   };
-
+  // @ts-ignore
   const fetchPage = async (pageIndex) => {
     try {
       // Your logic here
@@ -101,7 +103,7 @@ export default function BlockchainSelect() {
       <InputGroup>{/* Search Input */}</InputGroup>
       <Box>
         <div>
-          {assets.map((asset, index) => {
+          {assets.map((asset: any, index: any) => {
             return (
               <Card
                 key={index}
@@ -113,9 +115,9 @@ export default function BlockchainSelect() {
                 _hover={{ bg: "gray.200" }}
               >
                 <HStack>
-                  <Avatar size={"sm"} src={asset.image} name={asset.symbol} />
-                  <Text>{asset.symbol}</Text>
-                  <Text>{asset.balance}</Text>
+                  <Avatar size={"sm"} src={asset?.image} name={asset?.symbol} />
+                  <Text>{asset?.symbol}</Text>
+                  <Text>{asset?.balance}</Text>
                 </HStack>
               </Card>
             );
