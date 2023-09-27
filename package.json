@@ -5,8 +5,8 @@
   "author": "highlander",
   "scripts": {
     "dev": "vite",
-    "build": "pnpm type-check && NODE_OPTIONS=\"--max-old-space-size=4768\" vite build",
-    "build:turbo": "pnpm type-check && NODE_OPTIONS=\"--max-old-space-size=4768\" vite build",
+    "build": "pnpm type-check && vite build",
+    "build:turbo": "npx turbo build",
     "serve": "vite preview",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix && pnpm format",
