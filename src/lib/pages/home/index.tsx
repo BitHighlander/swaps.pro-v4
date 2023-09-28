@@ -26,6 +26,8 @@ import backgroundImage from "lib/assets/background/thorfox.webp"; // Adjust the 
 import BeginSwap from "./steps/BeginSwap"; // Updated import here
 import CompleteSwap from "./steps/CompleteSwap"; // Updated import here
 import SelectAssets from "./steps/SelectAssets"; // Updated import here
+// @ts-ignore
+import { COIN_MAP_LONG } from "@pioneer-platform/pioneer-coins";
 
 const Home = () => {
   const { state: pioneerState } = usePioneer();
@@ -42,33 +44,38 @@ const Home = () => {
   };
 
   const [assets, setAssets] = useState([]); // Array to store assets
-  const [input, setInput] = useState({
-    asset: {},
-    address: "",
-    balance: "",
-    symbol: "ETH",
-    network: "ETH",
-    caip: "",
-    amount: "",
-    image: "https://pioneers.dev/coins/ethereum.png",
-  });
-  const [output, setOutput] = useState({
-    asset: {},
-    address: "",
-    balance: "",
-    symbol: "ETH",
-    network: "ETH",
-    caip: "",
-    amount: "",
-    image: "https://pioneers.dev/coins/ethereum.png",
-  });
+  const [input, setInput] = useState(null);
+  const [output, setOutput] = useState(null);
 
   const onStart = async function () {
     try {
       console.log("swapKit: ", swapKit);
-      if (swapKit) {
-        const chains = Object.keys(swapKit.connectedWallets);
-        console.log("chains", chains);
+      //
+      for (let i = 0; i < walletData.length; i++) {
+        console.log("walletData[i]:", walletData[i]);
+        const balanceInfo = walletData[i];
+        for (let j = 0; j < balanceInfo.balance.length; j++) {
+          const balance = balanceInfo.balance[j];
+          console.log("balance:", balance);
+          const asset:any = {
+            symbol: balance.asset.symbol,
+            network: balance.asset.network,
+            asset: balance.asset,
+            image:
+              "https://pioneers.dev/coins/" +
+              COIN_MAP_LONG[balance.asset.network] +
+              ".png",
+            balance: balance.assetAmount.toString(),
+            address: balanceInfo.address
+          };
+          if(asset.asset.network === "Bitcoin"){
+            asset.image = "https://pioneers.dev/coins/bitcoin.png"
+            setOutput(asset);
+          }
+          if(asset.asset.symbol === "ETH" && asset.asset.type === "Native"){
+            setInput(asset);
+          }
+        }
       }
     } catch (e) {
       console.error(e);

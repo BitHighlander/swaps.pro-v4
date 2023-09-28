@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet";
 
-const APP_NAME = "Pioneer Template";
+const APP_NAME = "Swaps.pro";
 
 const Meta = () => {
   return (
     <Helmet>
       <title>{APP_NAME}</title>
-      <meta name="description" content="Pioneer Template" />
+      <meta name="description" content={APP_NAME} />
 
       <meta name="application-name" content={APP_NAME} />
       <meta name="apple-mobile-web-app-capable" content="yes" />

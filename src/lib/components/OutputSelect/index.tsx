@@ -51,7 +51,7 @@ export default function OutputSelect({ setOutput, onClose }) {
       const allAssets = [];
 
       for (let i = 0; i < walletData.length; i++) {
-        console.log("walletData[i]:", walletData[i]);
+        // console.log("walletData[i]:", walletData[i]);
         const balanceInfo = walletData[i];
         for (let j = 0; j < balanceInfo.balance.length; j++) {
           const balance = balanceInfo.balance[j];
@@ -62,11 +62,15 @@ export default function OutputSelect({ setOutput, onClose }) {
             asset: balance.asset,
             image:
               "https://pioneers.dev/coins/" +
-              COIN_MAP_LONG[balance.asset.network] +
+              COIN_MAP_LONG[balance.asset.chain.toLowerCase()] +
               ".png",
             balance: balance.assetAmount.toString()
           };
-          allAssets.push(asset);
+          console.log("asset:" , asset)
+          //filter only primary
+          if(asset.asset.type === "Native"){
+            allAssets.push(asset);
+          }
         }
       }
       // @ts-ignore
@@ -104,6 +108,13 @@ export default function OutputSelect({ setOutput, onClose }) {
 
   return (
     <Stack spacing={4}>
+      <HStack spacing={2} alignItems="center">
+        {chains.map((chain: { image: string | undefined; symbol: string | undefined; }, index: Key | null | undefined) => (
+          <Box key={index} p={2} borderWidth="1px" borderRadius="md">
+            <Avatar size="sm" src={chain.image} name={chain.symbol} />
+          </Box>
+        ))}
+      </HStack>
       <InputGroup>
         {/* Search Input */}
         <InputLeftElement pointerEvents="none">
@@ -115,13 +126,6 @@ export default function OutputSelect({ setOutput, onClose }) {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
       </InputGroup>
-      <HStack spacing={2} alignItems="center">
-        {chains.map((chain: { image: string | undefined; symbol: string | undefined; }, index: Key | null | undefined) => (
-          <Box key={index} p={2} borderWidth="1px" borderRadius="md">
-            <Avatar size="sm" src={chain.image} name={chain.symbol} />
-          </Box>
-        ))}
-      </HStack>
       <Box overflowY="scroll" maxHeight="400px">
         {assets.map((asset: any, index: any) => (
           <Card

@@ -15,6 +15,7 @@ import {
   Text,
   VStack,
   Progress,
+  Spinner
 } from "@chakra-ui/react";
 import { SettingsIcon, ArrowUpDownIcon, AddIcon } from "@chakra-ui/icons";
 // @ts-ignore
@@ -89,7 +90,7 @@ const BeginSwap = ({ walletData, input, setInput, output, setOutput }) => {
             {modalType === "Select Output" && (
               <div>
                 <OutputSelect
-                  setInput={setInput}
+                  setOutput={setOutput}
                   onClose={onClose}
                 ></OutputSelect>
               </div>
@@ -120,55 +121,65 @@ const BeginSwap = ({ walletData, input, setInput, output, setOutput }) => {
           _hover={{ color: "rgb(128,128,128)" }}
           onClick={() => openModal("Select Input")}
         >
-          <Avatar size="xl" src={input.image} />
-          <Box
-            border="1px solid #fff"
-            borderRadius="8px"
-            width="100%" // set width to 100% to ensure it stretches across
-            textAlign="center" // center the text within the box
-          >
-            <Text>Network: {input.network}</Text>
-          </Box>
-          <Box
-            border="1px solid #fff"
-            borderRadius="8px"
-            width="100%" // set width to 100% to ensure it stretches across
-            textAlign="center" // center the text within the box
-          >
-            <Text>Asset: {input.symbol}</Text>
-          </Box>
+          {!input ? (
+            <Spinner size="lg" color="blue.500" />
+          ) : (
+            <>
+              <Avatar size="xl" src={input.image} />
+              <Box
+                border="1px solid #fff"
+                borderRadius="8px"
+                width="100%"
+                textAlign="center"
+              >
+                <Text>Network: {input.network}</Text>
+              </Box>
+              <Box
+                border="1px solid #fff"
+                borderRadius="8px"
+                width="100%"
+                textAlign="center"
+              >
+                <Text>Asset: {input.symbol}</Text>
+              </Box>
+            </>
+          )}
         </Box>
         <ArrowUpDownIcon color="white" boxSize="2rem" />
-        <Box
-          w="45%"
-          h="10rem"
-          border="1px solid #fff"
-          borderRadius="8px"
-          display="flex"
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="center"
-          _hover={{ color: "rgb(128,128,128)" }}
-          onClick={() => openModal("Select Output")}
-        >
-          <Avatar size="xl" src={output.image} />
+        {!output ? (
+          <Spinner size="lg" color="blue.500" />
+        ) : (
           <Box
+            w="45%"
+            h="10rem"
             border="1px solid #fff"
             borderRadius="8px"
-            width="100%" // set width to 100% to ensure it stretches across
-            textAlign="center" // center the text within the box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+            _hover={{ color: "rgb(128,128,128)" }}
+            onClick={() => openModal("Select Output")}
           >
-            <Text>Network: {output.network}</Text>
+            <Avatar size="xl" src={output.image} />
+            <Box
+              border="1px solid #fff"
+              borderRadius="8px"
+              width="100%"
+              textAlign="center"
+            >
+              <Text>Network: {output.network}</Text>
+            </Box>
+            <Box
+              border="1px solid #fff"
+              borderRadius="8px"
+              width="100%"
+              textAlign="center"
+            >
+              <Text>Asset: {output.symbol}</Text>
+            </Box>
           </Box>
-          <Box
-            border="1px solid #fff"
-            borderRadius="8px"
-            width="100%" // set width to 100% to ensure it stretches across
-            textAlign="center" // center the text within the box
-          >
-            <Text>Asset: {output.symbol}</Text>
-          </Box>
-        </Box>
+        )}
       </Flex>
     </div>
   );
