@@ -52,6 +52,10 @@ const BeginSwap = ({ input, output, setTransaction }) => {
         const { routes } = await SwapKitApi.getQuote(quoteEntry);
         console.log("routes: ", routes);
         setRoutes(routes);
+
+        //select route0
+        const route0 = routes[0];
+        setTransaction(route0);
       }catch(e){
 
       }

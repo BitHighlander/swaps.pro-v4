@@ -34,19 +34,31 @@ const Home = () => {
   const { state: swapKitState } = useSwap();
   const { swapKit, walletData } = swapKitState;
   // steps
-  const [step, setStep] = useState(0);
+  let [step, setStep] = useState(0);
   const [modalType, setModalType] = useState(null);
   const [transaction, setTransaction] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedButton, setSelectedButton] = useState("quick"); // Initial selected button is "Quick"
-
+  const [isContinueDisabled, setIsContinueDisabled] = useState(true); // Initial continue button is disabled
   const handleClick = (button) => {
     setSelectedButton(button);
   };
-
+  const [continueButtonContent, setContinueButtonContent] = useState("Continue"); // Initial continue button content is "Continue"
   const [assets, setAssets] = useState([]); // Array to store assets
   const [input, setInput] = useState(null);
   const [output, setOutput] = useState(null);
+
+  useEffect(() => {
+    if(output && input && step === 0){
+      setIsContinueDisabled(false)
+    }
+  }, [input, output]);
+
+  useEffect(() => {
+    if(step === 1){
+      setContinueButtonContent('Sign Transaction')
+    }
+  }, [step]);
 
   const onStart = async function () {
     try {
@@ -196,9 +208,10 @@ const Home = () => {
           onClick={() => setStep((prevStep) => prevStep + 1)}
           leftIcon={<AddIcon />}
           colorScheme="blue"
+          isDisabled={isContinueDisabled}
           mt={4}
         >
-          Continue
+          {continueButtonContent}
         </Button>
       </Flex>
     </div>
