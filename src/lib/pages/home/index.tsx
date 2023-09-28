@@ -13,9 +13,9 @@ import {
   Box,
   Avatar,
   VStack,
-  Progress,
+  SimpleGrid, // Add SimpleGrid
 } from "@chakra-ui/react";
-import { SettingsIcon, ArrowUpDownIcon, AddIcon } from "@chakra-ui/icons";
+import { SettingsIcon, AddIcon } from "@chakra-ui/icons";
 
 // @ts-ignore
 import { usePioneer } from "@pioneer-platform/pioneer-react";
@@ -31,31 +31,42 @@ const Home = () => {
   const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
   const { swapKit, walletData } = swapKitState;
-  //steps
+  // steps
   const [step, setStep] = useState(0);
-  const [address, setAddress] = useState("");
   const [modalType, setModalType] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedButton, setSelectedButton] = useState("quick"); // Initial selected button is "Quick"
+
+  const handleClick = (button) => {
+    setSelectedButton(button);
+  };
+
+  const [assets, setAssets] = useState([]); // Array to store assets
   const [input, setInput] = useState({
+    asset: {},
     address: "",
+    balance: "",
     symbol: "ETH",
+    network: "ETH",
     caip: "",
     amount: "",
-    icon: "https://pioneers.dev/coins/ethereum.png",
+    image: "https://pioneers.dev/coins/ethereum.png",
   });
   const [output, setOutput] = useState({
+    asset: {},
     address: "",
-    symbol: "BTC",
+    balance: "",
+    symbol: "ETH",
+    network: "ETH",
     caip: "",
-    icon: "https://pioneers.dev/coins/bitcoin.png",
+    amount: "",
+    image: "https://pioneers.dev/coins/ethereum.png",
   });
 
   const onStart = async function () {
     try {
       console.log("swapKit: ", swapKit);
       if (swapKit) {
-        // console.log("swapKit.connectWallets: ", swapKit.connectedWallets);
-        // console.log("swapKit.connectWallets: ", swapKit.connectWallets);
         const chains = Object.keys(swapKit.connectedWallets);
         console.log("chains", chains);
       }
@@ -77,9 +88,18 @@ const Home = () => {
     console.log("step: ", step);
     switch (step) {
       case 0:
-        return <SelectAssets walletData={walletData} />;
+        return (
+          <SelectAssets
+            walletData={walletData}
+            input={input}
+            setInput={setInput}
+            output={output}
+            setOutput={setOutput}
+            onClose={onClose}
+          />
+        );
       case 1:
-        return <BeginSwap />;
+        return <BeginSwap input={input} output={output} />;
       case 2:
         return <CompleteSwap />;
       default:
@@ -144,19 +164,46 @@ const Home = () => {
       <Flex
         w="30rem"
         mx="auto"
-        flexDirection="column" // ensure children are stacked vertically
-        alignItems="center" // Center the children horizontally
+        flexDirection="column"
+        alignItems="center"
         bg="black"
         p="2rem"
       >
+        <SimpleGrid columns={2} spacing={4} width="full" mb={4}>
+          {assets.map((asset) => (
+            <Button
+              key={asset.network}
+              onClick={() => setSelectedButton(asset.network)}
+              colorScheme={selectedButton === asset.network ? "blue" : "gray"}
+              variant={selectedButton === asset.network ? "solid" : "outline"}
+              width="100%"
+            >
+              {asset.network}
+            </Button>
+          ))}
+        </SimpleGrid>
+        <Button
+          onClick={() => handleClick("quick")}
+          colorScheme={selectedButton === "quick" ? "blue" : "gray"}
+          variant="outline"
+          width="48%"
+        >
+          Quick
+        </Button>
+        <Button
+          onClick={() => handleClick("precise")}
+          colorScheme={selectedButton === "precise" ? "blue" : "gray"}
+          variant="outline"
+          width="48%"
+        >
+          Precise
+        </Button>
         <Button
           onClick={() => setStep((prevStep) => prevStep + 1)}
           leftIcon={<AddIcon />}
           colorScheme="blue"
           mt={4}
         >
-          {" "}
-          {/* Add mt for margin */}
           Continue
         </Button>
       </Flex>

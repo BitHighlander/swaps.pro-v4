@@ -1,17 +1,59 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
+import { QuoteRoute, SwapKitApi } from '@pioneer-platform/swapkit-api';
 // @ts-ignore
 import calculatingAnimation from "lib/assets/gif/calculating.gif";
+// @ts-ignore
+import { useSwap } from "swapkit-provider";
 
-const BeginSwap = () => {
+// @ts-ignore
+const BeginSwap = ({ input, output }) => {
+  const { state } = useSwap();
+  const { swapKit, walletData } = state;
   const [showGif, setShowGif] = useState(true);
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowGif(false);
-    }, 4000); // 4 seconds timeout
+  //build swap
+  const buildSwap = async function () {
+    try {
+      //
+      console.log("input: ", input);
+      console.log("output: ", output);
 
-    return () => clearTimeout(timeoutId); // Clear the timeout if the component is unmounted
+
+
+      // let quoteEntry = {
+      //   sellAsset: input.asset.toString(),
+      //     sellAmount: input.assetAmount.toString(),
+      //   buyAsset: output.asset.toString(),
+      //   senderAddress,
+      //   recipientAddress,
+      //   slippage: '3',
+      // }
+
+      //set the amount total balance
+      // const quoteEntry:any = {
+      //   sellAsset: "ETH",
+      //   sellAmount: "0.1",
+      //   buyAsset: "BTC",
+      //   senderAddress: "0x123",
+      //   recipientAddress: "0x123",
+      //   slippage: "3",
+      // }
+      // const { routes } = await SwapKitApi.getQuote(quoteEntry);
+      // console.log("routes: ", routes);
+
+      //
+      // swapKit.buildSwap({});
+
+      //onDone
+      setShowGif(false);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  useEffect(() => {
+    buildSwap();
   }, []);
 
   return (
