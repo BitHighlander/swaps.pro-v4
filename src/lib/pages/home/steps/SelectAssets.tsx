@@ -25,7 +25,7 @@ import { useSwap } from "swapkit-provider";
 import BlockchainSelect from "lib/components/AssetSelect";
 import OutputSelect from "lib/components/OutputSelect";
 // @ts-ignore
-const BeginSwap = ({ walletData, input, setInput, output, setOutput }) => {
+const BeginSwap = ({ walletData, input, setInput, output, setOutput, handleClick, selectedButton }) => {
   const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
   const { swapKit } = swapKitState;
@@ -146,40 +146,67 @@ const BeginSwap = ({ walletData, input, setInput, output, setOutput }) => {
           )}
         </Box>
         <ArrowUpDownIcon color="white" boxSize="2rem" />
+        <Box
+          w="45%"
+          h="10rem"
+          border="1px solid #fff"
+          borderRadius="8px"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          _hover={{ color: "rgb(128,128,128)" }}
+          onClick={() => openModal("Select Output")}
+        >
         {!output ? (
           <Spinner size="lg" color="blue.500" />
         ) : (
-          <Box
-            w="45%"
-            h="10rem"
-            border="1px solid #fff"
-            borderRadius="8px"
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="center"
-            _hover={{ color: "rgb(128,128,128)" }}
-            onClick={() => openModal("Select Output")}
-          >
-            <Avatar size="xl" src={output.image} />
-            <Box
-              border="1px solid #fff"
-              borderRadius="8px"
-              width="100%"
-              textAlign="center"
-            >
-              <Text>Network: {output.network}</Text>
-            </Box>
-            <Box
-              border="1px solid #fff"
-              borderRadius="8px"
-              width="100%"
-              textAlign="center"
-            >
-              <Text>Asset: {output.symbol}</Text>
-            </Box>
-          </Box>
+            <div>
+              <Avatar size="xl" src={output.image} />
+              <Box
+                border="1px solid #fff"
+                borderRadius="8px"
+                width="100%"
+                textAlign="center"
+              >
+                <Text>Network: {output.network}</Text>
+              </Box>
+              <Box
+                border="1px solid #fff"
+                borderRadius="8px"
+                width="100%"
+                textAlign="center"
+              >
+                <Text>Asset: {output.symbol}</Text>
+              </Box>
+            </div>
         )}
+        </Box>
+      </Flex>
+      <Flex
+        w="30rem"
+        mx="auto"
+        flexDirection="column"
+        alignItems="center"
+        bg="black"
+        p="2rem"
+      >
+      <Button
+        onClick={() => handleClick("quick")}
+        colorScheme={selectedButton === "quick" ? "blue" : "gray"}
+        variant="outline"
+        width="48%"
+      >
+        Quick
+      </Button>
+      <Button
+        onClick={() => handleClick("precise")}
+        colorScheme={selectedButton === "precise" ? "blue" : "gray"}
+        variant="outline"
+        width="48%"
+      >
+        Precise
+      </Button>
       </Flex>
     </div>
   );

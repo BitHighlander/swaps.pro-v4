@@ -36,6 +36,7 @@ const Home = () => {
   // steps
   const [step, setStep] = useState(0);
   const [modalType, setModalType] = useState(null);
+  const [transaction, setTransaction] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedButton, setSelectedButton] = useState("quick"); // Initial selected button is "Quick"
 
@@ -103,10 +104,12 @@ const Home = () => {
             output={output}
             setOutput={setOutput}
             onClose={onClose}
+            handleClick={handleClick}
+            selectedButton={selectedButton}
           />
         );
       case 1:
-        return <BeginSwap input={input} output={output} />;
+        return <BeginSwap input={input} output={output} setTransaction={setTransaction} />;
       case 2:
         return <CompleteSwap />;
       default:
@@ -189,22 +192,6 @@ const Home = () => {
             </Button>
           ))}
         </SimpleGrid>
-        <Button
-          onClick={() => handleClick("quick")}
-          colorScheme={selectedButton === "quick" ? "blue" : "gray"}
-          variant="outline"
-          width="48%"
-        >
-          Quick
-        </Button>
-        <Button
-          onClick={() => handleClick("precise")}
-          colorScheme={selectedButton === "precise" ? "blue" : "gray"}
-          variant="outline"
-          width="48%"
-        >
-          Precise
-        </Button>
         <Button
           onClick={() => setStep((prevStep) => prevStep + 1)}
           leftIcon={<AddIcon />}
