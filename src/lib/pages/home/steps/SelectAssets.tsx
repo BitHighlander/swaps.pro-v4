@@ -15,7 +15,7 @@ import {
   Text,
   VStack,
   Progress,
-  Spinner
+  Spinner,
 } from "@chakra-ui/react";
 import { SettingsIcon, ArrowUpDownIcon, AddIcon } from "@chakra-ui/icons";
 // @ts-ignore
@@ -24,8 +24,23 @@ import { usePioneer } from "@pioneer-platform/pioneer-react";
 import { useSwap } from "swapkit-provider";
 import BlockchainSelect from "lib/components/AssetSelect";
 import OutputSelect from "lib/components/OutputSelect";
-// @ts-ignore
-const BeginSwap = ({ walletData, input, setInput, output, setOutput, handleClick, selectedButton }) => {
+interface BeginSwapProps {
+  input: any; // Replace 'any' with the actual type of 'input'
+  setInput: any; // Replace 'any' with the actual type of 'setInput'
+  output: any; // Replace 'any' with the actual type of 'output'
+  setOutput: any; // Replace 'any' with the actual type of 'setOutput'
+  handleClick: any; // Replace 'any' with the actual type of 'handleClick'
+  selectedButton: any; // Replace 'any' with the actual type of 'selectedButton'
+}
+
+const BeginSwap: React.FC<BeginSwapProps> = ({
+  input,
+  setInput,
+  output,
+  setOutput,
+  handleClick,
+  selectedButton,
+}) => {
   const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
   const { swapKit } = swapKitState;
@@ -158,9 +173,9 @@ const BeginSwap = ({ walletData, input, setInput, output, setOutput, handleClick
           _hover={{ color: "rgb(128,128,128)" }}
           onClick={() => openModal("Select Output")}
         >
-        {!output ? (
-          <Spinner size="lg" color="blue.500" />
-        ) : (
+          {!output ? (
+            <Spinner size="lg" color="blue.500" />
+          ) : (
             <div>
               <Avatar size="xl" src={output.image} />
               <Box
@@ -180,7 +195,7 @@ const BeginSwap = ({ walletData, input, setInput, output, setOutput, handleClick
                 <Text>Asset: {output.symbol}</Text>
               </Box>
             </div>
-        )}
+          )}
         </Box>
       </Flex>
       <Flex
@@ -191,22 +206,22 @@ const BeginSwap = ({ walletData, input, setInput, output, setOutput, handleClick
         bg="black"
         p="2rem"
       >
-      <Button
-        onClick={() => handleClick("quick")}
-        colorScheme={selectedButton === "quick" ? "blue" : "gray"}
-        variant="outline"
-        width="48%"
-      >
-        Quick
-      </Button>
-      <Button
-        onClick={() => handleClick("precise")}
-        colorScheme={selectedButton === "precise" ? "blue" : "gray"}
-        variant="outline"
-        width="48%"
-      >
-        Precise
-      </Button>
+        <Button
+          onClick={() => handleClick("quick")}
+          colorScheme={selectedButton === "quick" ? "blue" : "gray"}
+          variant="outline"
+          width="48%"
+        >
+          Quick
+        </Button>
+        <Button
+          onClick={() => handleClick("precise")}
+          colorScheme={selectedButton === "precise" ? "blue" : "gray"}
+          variant="outline"
+          width="48%"
+        >
+          Precise
+        </Button>
       </Flex>
     </div>
   );

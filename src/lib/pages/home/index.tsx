@@ -26,7 +26,7 @@ import backgroundImage from "lib/assets/background/thorfox.webp"; // Adjust the 
 import BeginSwap from "./steps/BeginSwap"; // Updated import here
 import CompleteSwap from "./steps/CompleteSwap"; // Updated import here
 import SelectAssets from "./steps/SelectAssets"; // Updated import here
-import { FeeOption } from '@pioneer-platform/types';
+import { FeeOption } from "@pioneer-platform/types";
 // @ts-ignore
 import { COIN_MAP_LONG } from "@pioneer-platform/pioneer-coins";
 
@@ -35,30 +35,35 @@ const Home = () => {
   const { state: swapKitState } = useSwap();
   const { swapKit, walletData } = swapKitState;
   // steps
-  let [step, setStep] = useState(0);
+  const [step, setStep] = useState(0);
   const [modalType, setModalType] = useState(null);
   const [route, setRoute] = useState(null);
   const [txHash, setTxhash] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedButton, setSelectedButton] = useState("quick"); // Initial selected button is "Quick"
   const [isContinueDisabled, setIsContinueDisabled] = useState(true); // Initial continue button is disabled
-  const handleClick = (button) => {
+  const handleClick = (button: any) => {
     setSelectedButton(button);
   };
-  const [continueButtonContent, setContinueButtonContent] = useState("Continue"); // Initial continue button content is "Continue"
+  const [continueButtonContent, setContinueButtonContent] =
+    useState("Continue"); // Initial continue button content is "Continue"
   const [assets, setAssets] = useState([]); // Array to store assets
   const [input, setInput] = useState(null);
   const [output, setOutput] = useState(null);
+  const [showGoBack, setShowGoBack] = useState(false);
 
   useEffect(() => {
-    if(output && input && step === 0){
-      setIsContinueDisabled(false)
+    if (output && input && step === 0) {
+      setIsContinueDisabled(false);
     }
   }, [input, output]);
 
   useEffect(() => {
-    if(step === 1){
-      setContinueButtonContent('Sign Transaction')
+    if (step === 0) {
+      setShowGoBack(false);
+    }
+    if (step === 1) {
+      setContinueButtonContent("Sign Transaction");
     }
   }, [step]);
 
@@ -72,7 +77,7 @@ const Home = () => {
         for (let j = 0; j < balanceInfo.balance.length; j++) {
           const balance = balanceInfo.balance[j];
           console.log("balance:", balance);
-          const asset:any = {
+          const asset: any = {
             symbol: balance.asset.symbol,
             network: balance.asset.network,
             asset: balance.asset,
@@ -81,13 +86,13 @@ const Home = () => {
               COIN_MAP_LONG[balance.asset.network] +
               ".png",
             balance: balance.assetAmount.toString(),
-            address: balanceInfo.address
+            address: balanceInfo.address,
           };
-          if(asset.asset.network === "Bitcoin"){
-            asset.image = "https://pioneers.dev/coins/bitcoin.png"
+          if (asset.asset.network === "Bitcoin") {
+            asset.image = "https://pioneers.dev/coins/bitcoin.png";
             setOutput(asset);
           }
-          if(asset.asset.symbol === "ETH" && asset.asset.type === "Native"){
+          if (asset.asset.symbol === "ETH" && asset.asset.type === "Native") {
             setInput(asset);
           }
         }
@@ -106,34 +111,40 @@ const Home = () => {
     onOpen();
   };
 
-  const handleClickContinue = async function(){
-    try{
-      if(step === 0){
-        setStep((prevStep) => prevStep + 1)
-        return
+  const handleClickContinue = async function () {
+    try {
+      if (step === 0) {
+        setStep((prevStep) => prevStep + 1);
+        setShowGoBack(true);
+        return;
       }
-      if(step === 1){
-        let swapParams = {
+      if (step === 1) {
+        const swapParams = {
           route,
-          recipient: output.address,
+          // @ts-ignore
+          recipient: output?.address,
           feeOptionKey: FeeOption.Fast,
-        }
-        console.log("swapParams: ",swapParams)
-        console.log("swapKit: ",swapKit)
+        };
+        console.log("swapParams: ", swapParams);
+        console.log("swapKit: ", swapKit);
         const txHash = await swapKit.swap(swapParams);
         console.log("txHash: ", txHash);
         setTxhash(txHash);
-        setStep((prevStep) => prevStep + 1)
+        setStep((prevStep) => prevStep + 1);
       }
-      if(step === 1){
+      if (step === 1) {
         //check if confirmed
         //if confirmed
         //setStep((prevStep) => prevStep + 1)
       }
-    }catch(e){
-      console.error(e)
+    } catch (e) {
+      console.error(e);
     }
-  }
+  };
+
+  const goBack = function () {
+    setStep((prevStep) => prevStep - 1);
+  };
 
   const renderStepContent = () => {
     console.log("step: ", step);
@@ -141,12 +152,10 @@ const Home = () => {
       case 0:
         return (
           <SelectAssets
-            walletData={walletData}
             input={input}
             setInput={setInput}
             output={output}
             setOutput={setOutput}
-            onClose={onClose}
             handleClick={handleClick}
             selectedButton={selectedButton}
           />
@@ -154,10 +163,10 @@ const Home = () => {
       case 1:
         return <BeginSwap input={input} output={output} setRoute={setRoute} />;
       case 2:
-        return <CompleteSwap txHash={txHash}/>;
+        return <CompleteSwap txHash={txHash} />;
       default:
         setStep(0);
-        return <BeginSwap />;
+        return "true";
     }
   };
 
@@ -223,7 +232,7 @@ const Home = () => {
         p="2rem"
       >
         <SimpleGrid columns={2} spacing={4} width="full" mb={4}>
-          {assets.map((asset) => (
+          {assets.map((asset: any) => (
             <Button
               key={asset.network}
               onClick={() => setSelectedButton(asset.network)}
@@ -244,6 +253,13 @@ const Home = () => {
         >
           {continueButtonContent}
         </Button>
+        {showGoBack ? (
+          <div>
+            <Button onClick={goBack}>Go Back</Button>
+          </div>
+        ) : (
+          <div></div>
+        )}
       </Flex>
     </div>
   );

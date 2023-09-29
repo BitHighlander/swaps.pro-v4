@@ -27,7 +27,11 @@ import { usePioneer } from "@pioneer-platform/pioneer-react";
 // @ts-ignore
 import { useSwap } from "swapkit-provider";
 // @ts-ignore
-import { THORCHAIN_NETWORKS, COIN_MAP_LONG } from "@pioneer-platform/pioneer-coins";
+import {
+  THORCHAIN_NETWORKS,
+  COIN_MAP_LONG,
+  // @ts-ignore
+} from "@pioneer-platform/pioneer-coins";
 // @ts-ignore
 
 // @ts-ignore
@@ -64,11 +68,11 @@ export default function OutputSelect({ setOutput, onClose }) {
               "https://pioneers.dev/coins/" +
               COIN_MAP_LONG[balance.asset.chain.toLowerCase()] +
               ".png",
-            balance: balance.assetAmount.toString()
+            balance: balance.assetAmount.toString(),
           };
-          console.log("asset:" , asset)
+          console.log("asset:", asset);
           //filter only primary
-          if(asset.asset.type === "Native"){
+          if (asset.asset.type === "Native") {
             allAssets.push(asset);
           }
         }
@@ -109,11 +113,16 @@ export default function OutputSelect({ setOutput, onClose }) {
   return (
     <Stack spacing={4}>
       <HStack spacing={2} alignItems="center">
-        {chains.map((chain: { image: string | undefined; symbol: string | undefined; }, index: Key | null | undefined) => (
-          <Box key={index} p={2} borderWidth="1px" borderRadius="md">
-            <Avatar size="sm" src={chain.image} name={chain.symbol} />
-          </Box>
-        ))}
+        {chains.map(
+          (
+            chain: { image: string | undefined; symbol: string | undefined },
+            index: Key | null | undefined
+          ) => (
+            <Box key={index} p={2} borderWidth="1px" borderRadius="md">
+              <Avatar size="sm" src={chain.image} name={chain.symbol} />
+            </Box>
+          )
+        )}
       </HStack>
       <InputGroup>
         {/* Search Input */}

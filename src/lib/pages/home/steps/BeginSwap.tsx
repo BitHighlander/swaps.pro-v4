@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
-import { QuoteRoute, SwapKitApi } from '@pioneer-platform/swapkit-api';
-import { Amount, AssetAmount, AssetEntity } from '@pioneer-platform/swapkit-entities';
+import { QuoteRoute, SwapKitApi } from "@pioneer-platform/swapkit-api";
+import {
+  Amount,
+  AssetAmount,
+  AssetEntity,
+} from "@pioneer-platform/swapkit-entities";
 // @ts-ignore
 import calculatingAnimation from "lib/assets/gif/calculating.gif";
 // @ts-ignore
@@ -13,7 +17,8 @@ const BeginSwap = ({ input, output, setRoute }) => {
   const { swapKit, walletData } = state;
   const [showGif, setShowGif] = useState(true);
   const [routes, setRoutes] = useState({});
-
+  const [amountOut, setAmountOut] = useState("");
+  const [path, setPath] = useState("");
   //build swap
   const buildSwap = async function () {
     try {
@@ -21,34 +26,37 @@ const BeginSwap = ({ input, output, setRoute }) => {
       console.log("input: ", input);
       console.log("output: ", output);
 
-      let sellAsset = new AssetAmount(input.asset, input.balance);
-      let buyAsset = new AssetAmount(output.asset, output.balance);
+      const sellAsset = new AssetAmount(input.asset, input.balance);
+      const buyAsset = new AssetAmount(output.asset, output.balance);
       // let sellAsset = new AssetEntity(input.asset.chain, input.asset.symbol);
       //let buyAsset = new AssetEntity(output.asset.chain, output.asset.symbol)
 
       const value = parseFloat(input.balance.toString());
       const amount = Amount.fromNormalAmount(value);
 
-      let quoteEntry = {
-        sellAsset:input.network+"."+input.symbol,
+      const quoteEntry = {
+        sellAsset: input.network + "." + input.symbol,
         sellAmount: amount.assetAmount.toString(),
-        buyAsset: output.symbol+"."+output.symbol,
-        senderAddress:input.address,
-        recipientAddress:output.address,
-        slippage: '3',
-      }
+        buyAsset: output.symbol + "." + output.symbol,
+        senderAddress: input.address,
+        recipientAddress: output.address,
+        slippage: "3",
+      };
 
-      try{
-        console.log(quoteEntry)
+      try {
+        console.log(quoteEntry);
         const { routes } = await SwapKitApi.getQuote(quoteEntry);
         console.log("routes: ", routes);
         setRoutes(routes);
-
-        //select route0
-        const route0 = routes[0];
-        setRoute(route0);
-      }catch(e){
-        console.error(e)
+        if (routes && routes[0]) {
+          //select route0
+          const route0 = routes[0];
+          setRoute(route0);
+          setAmountOut(route0.expectedOutput);
+          setPath(route0.path);
+        }
+      } catch (e) {
+        console.error(e);
       }
       // setRoutes(routes);
       //
@@ -76,10 +84,10 @@ const BeginSwap = ({ input, output, setRoute }) => {
         <Box border="1px" borderRadius="md" p={4} boxShadow="lg">
           <Text fontWeight="bold">Rate</Text>
           <Text fontWeight="bold">Slippage</Text>
-          <Box as="span">Path: {routes[0]?.path}</Box>
+          <Box as="span">Path: {path}</Box>
 
           <Box border="1px" borderRadius="md" p={4} mb={2} boxShadow="lg">
-            You will receive {routes[0]?.expectedOutput}
+            You will receive {amountOut}
           </Box>
           <Box border="1px" borderRadius="md" p={4} boxShadow="lg">
             {output.address} ({output.symbol})
