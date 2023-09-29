@@ -90,6 +90,7 @@ const Home = () => {
             setOutput(asset);
           }
           if (asset.asset.symbol === "ETH" && asset.asset.type === "Native") {
+
             setInput(asset);
           }
         }
@@ -186,7 +187,7 @@ const Home = () => {
         </ModalContent>
       </Modal>
       <Box
-        w="30rem"
+        w="35rem"
         mx="auto"
         mt="5rem"
         boxShadow="rgb(0 0 0 / 8%) 0rem 0.37rem 0.62rem"
@@ -210,7 +211,7 @@ const Home = () => {
       </Box>
       <VStack>
         <Flex
-          w="30rem"
+          w="35rem"
           mx="auto"
           alignItems="center"
           justifyContent="space-between"
@@ -221,7 +222,7 @@ const Home = () => {
         </Flex>
       </VStack>
       <Flex
-        w="30rem"
+        w="35rem"
         mx="auto"
         flexDirection="column"
         alignItems="center"

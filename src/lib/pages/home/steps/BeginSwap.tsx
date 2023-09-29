@@ -35,7 +35,7 @@ const BeginSwap = ({ input, output, setRoute }) => {
       const amount = Amount.fromNormalAmount(value);
 
       const quoteEntry = {
-        sellAsset: input.network + "." + input.symbol,
+        sellAsset: input.symbol + "." + input.symbol,
         sellAmount: amount.assetAmount.toString(),
         buyAsset: output.symbol + "." + output.symbol,
         senderAddress: input.address,

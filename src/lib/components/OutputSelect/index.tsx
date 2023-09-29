@@ -66,6 +66,7 @@ export default function OutputSelect({ setOutput, onClose }) {
               COIN_MAP_LONG[balance.asset.chain.toLowerCase()] +
               ".png",
             balance: balance.assetAmount.toString(),
+            address: balanceInfo.address,
           };
           console.log("asset:", asset);
           //filter only primary

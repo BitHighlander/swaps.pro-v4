@@ -57,6 +57,7 @@ export default function BlockchainSelect({ setInput, onClose }) {
               COIN_MAP_LONG[balance.asset.network] +
               ".png",
             balance: balance.assetAmount.toString(),
+            address: balanceInfo.address,
           };
           if (asset.asset.network === "Bitcoin") {
             asset.image = "https://pioneers.dev/coins/bitcoin.png";
