@@ -18,8 +18,6 @@ import {
 import { SettingsIcon, AddIcon } from "@chakra-ui/icons";
 
 // @ts-ignore
-import { usePioneer } from "@pioneer-platform/pioneer-react";
-// @ts-ignore
 import { useSwap } from "swapkit-provider";
 // @ts-ignore
 import backgroundImage from "lib/assets/background/thorfox.webp"; // Adjust the path
@@ -31,7 +29,6 @@ import { FeeOption } from "@pioneer-platform/types";
 import { COIN_MAP_LONG } from "@pioneer-platform/pioneer-coins";
 
 const Home = () => {
-  const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
   const { swapKit, walletData } = swapKitState;
   // steps

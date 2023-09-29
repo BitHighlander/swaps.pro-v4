@@ -24,7 +24,6 @@ const ForceDarkMode = ({ children }) => {
 
 const App = () => {
   return (
-    <PioneerProvider>
       <SwapProvider>
         <ChakraProvider theme={theme}>
           <ForceDarkMode>
@@ -36,7 +35,6 @@ const App = () => {
           </ForceDarkMode>
         </ChakraProvider>
       </SwapProvider>
-    </PioneerProvider>
   );
 };
 

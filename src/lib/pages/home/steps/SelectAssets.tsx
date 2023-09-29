@@ -19,8 +19,6 @@ import {
 } from "@chakra-ui/react";
 import { SettingsIcon, ArrowUpDownIcon, AddIcon } from "@chakra-ui/icons";
 // @ts-ignore
-import { usePioneer } from "@pioneer-platform/pioneer-react";
-// @ts-ignore
 import { useSwap } from "swapkit-provider";
 import BlockchainSelect from "lib/components/AssetSelect";
 import OutputSelect from "lib/components/OutputSelect";
@@ -41,7 +39,6 @@ const BeginSwap: React.FC<BeginSwapProps> = ({
   handleClick,
   selectedButton,
 }) => {
-  const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
   const { swapKit } = swapKitState;
   const [modalType, setModalType] = useState("");
