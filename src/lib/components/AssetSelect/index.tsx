@@ -23,14 +23,11 @@ import {
 import { useEffect, useState } from "react";
 
 // @ts-ignore
-import { usePioneer } from "@pioneer-platform/pioneer-react";
-// @ts-ignore
 import { useSwap } from "swapkit-provider";
 // @ts-ignore
 import { COIN_MAP_LONG } from "@pioneer-platform/pioneer-coins";
 // @ts-ignore
 export default function BlockchainSelect({ setInput, onClose }) {
-  const { state: pioneerState } = usePioneer();
   const { state: swapKitState } = useSwap();
   const { swapKit, walletData } = swapKitState;
   const [searchQuery, setSearchQuery] = useState("");
