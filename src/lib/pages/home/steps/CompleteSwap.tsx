@@ -5,9 +5,10 @@ import completedGif from "lib/assets/gif/completed.gif"; // Import the GIF here
 // @ts-ignore
 import shiftingGif from "lib/assets/gif/shifting.gif";
 
-const BeginSwap = () => {
+//@ts-ignore
+const BeginSwap = ({txHash}) => {
   const [isCompleted, setIsCompleted] = useState(false);
-  const transactionUrl = "https://etherscan.io/tx/0x..."; // Replace with your transaction URL
+  const transactionUrl = "https://etherscan.io/tx/"+txHash; // Replace with your transaction URL
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {

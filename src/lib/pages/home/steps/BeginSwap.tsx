@@ -8,7 +8,7 @@ import calculatingAnimation from "lib/assets/gif/calculating.gif";
 import { useSwap } from "swapkit-provider";
 
 // @ts-ignore
-const BeginSwap = ({ input, output, setTransaction }) => {
+const BeginSwap = ({ input, output, setRoute }) => {
   const { state } = useSwap();
   const { swapKit, walletData } = state;
   const [showGif, setShowGif] = useState(true);
@@ -38,15 +38,6 @@ const BeginSwap = ({ input, output, setTransaction }) => {
         slippage: '3',
       }
 
-      //set the amount total balance
-      // const quoteEntry:any = {
-      //   sellAsset: "ETH",
-      //   sellAmount: "0.1",
-      //   buyAsset: "BTC",
-      //   senderAddress: "0x123",
-      //   recipientAddress: "0x123",
-      //   slippage: "3",
-      // }
       try{
         console.log(quoteEntry)
         const { routes } = await SwapKitApi.getQuote(quoteEntry);
@@ -55,9 +46,9 @@ const BeginSwap = ({ input, output, setTransaction }) => {
 
         //select route0
         const route0 = routes[0];
-        setTransaction(route0);
+        setRoute(route0);
       }catch(e){
-
+        console.error(e)
       }
       // setRoutes(routes);
       //

@@ -26,6 +26,7 @@ import backgroundImage from "lib/assets/background/thorfox.webp"; // Adjust the 
 import BeginSwap from "./steps/BeginSwap"; // Updated import here
 import CompleteSwap from "./steps/CompleteSwap"; // Updated import here
 import SelectAssets from "./steps/SelectAssets"; // Updated import here
+import { FeeOption } from '@pioneer-platform/types';
 // @ts-ignore
 import { COIN_MAP_LONG } from "@pioneer-platform/pioneer-coins";
 
@@ -36,7 +37,8 @@ const Home = () => {
   // steps
   let [step, setStep] = useState(0);
   const [modalType, setModalType] = useState(null);
-  const [transaction, setTransaction] = useState(null);
+  const [route, setRoute] = useState(null);
+  const [txHash, setTxhash] = useState(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedButton, setSelectedButton] = useState("quick"); // Initial selected button is "Quick"
   const [isContinueDisabled, setIsContinueDisabled] = useState(true); // Initial continue button is disabled
@@ -104,6 +106,35 @@ const Home = () => {
     onOpen();
   };
 
+  const handleClickContinue = async function(){
+    try{
+      if(step === 0){
+        setStep((prevStep) => prevStep + 1)
+        return
+      }
+      if(step === 1){
+        let swapParams = {
+          route,
+          recipient: output.address,
+          feeOptionKey: FeeOption.Fast,
+        }
+        console.log("swapParams: ",swapParams)
+        console.log("swapKit: ",swapKit)
+        const txHash = await swapKit.swap(swapParams);
+        console.log("txHash: ", txHash);
+        setTxhash(txHash);
+        setStep((prevStep) => prevStep + 1)
+      }
+      if(step === 1){
+        //check if confirmed
+        //if confirmed
+        //setStep((prevStep) => prevStep + 1)
+      }
+    }catch(e){
+      console.error(e)
+    }
+  }
+
   const renderStepContent = () => {
     console.log("step: ", step);
     switch (step) {
@@ -121,9 +152,9 @@ const Home = () => {
           />
         );
       case 1:
-        return <BeginSwap input={input} output={output} setTransaction={setTransaction} />;
+        return <BeginSwap input={input} output={output} setRoute={setRoute} />;
       case 2:
-        return <CompleteSwap />;
+        return <CompleteSwap txHash={txHash}/>;
       default:
         setStep(0);
         return <BeginSwap />;
@@ -205,7 +236,7 @@ const Home = () => {
           ))}
         </SimpleGrid>
         <Button
-          onClick={() => setStep((prevStep) => prevStep + 1)}
+          onClick={() => handleClickContinue()}
           leftIcon={<AddIcon />}
           colorScheme="blue"
           isDisabled={isContinueDisabled}
