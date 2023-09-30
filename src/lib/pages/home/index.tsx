@@ -51,7 +51,8 @@ const Home = () => {
   const [showGoBack, setShowGoBack] = useState(false);
 
   useEffect(() => {
-    if (swapKit && output && input && step === 0) {
+    // @ts-ignore
+    if (swapKit && output && input && input?.address && output?.address && step === 0) {
       setIsContinueDisabled(false);
     }
   }, [input, output]);
