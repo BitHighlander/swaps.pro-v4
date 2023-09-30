@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { QuoteRoute, SwapKitApi } from "@pioneer-platform/swapkit-api";
-import {UTXOEstimateFeeParams} from "@pioneer-platform/toolbox-utxo";
+import { UTXOEstimateFeeParams } from "@pioneer-platform/toolbox-utxo";
 import {
   Amount,
   AssetAmount,
@@ -32,20 +32,23 @@ const BeginSwap = ({ input, output, setRoute }) => {
       console.log("input.chain: ", input.chain);
       console.log("input.asset: ", input.asset.chain);
       //TODO placeholder memo?
-      let feeParams:UTXOEstimateFeeParams = {
+      const feeParams: UTXOEstimateFeeParams = {
         from: input.address,
         memo: "THISISAPLACEHOLDERMEMOLARGERHTNEN64CHARS",
       };
-      let maxSpendable = await swapKit.estimateMaxSendableAmount({chain:input.asset.chain,params:feeParams});
+      const maxSpendable = await swapKit.estimateMaxSendableAmount({
+        chain: input.asset.chain,
+        params: feeParams,
+      });
       console.log("maxSpendable: ", maxSpendable);
       console.log("maxSpendable: ", maxSpendable.amount().toString());
-      let amountSat = parseInt(maxSpendable.amount().toString())
+      const amountSat = parseInt(maxSpendable.amount().toString());
       console.log("maxSpendable: ", maxSpendable.decimal);
       // Calculate the divisor: 10^decimal
-      let divisor = Math.pow(10, maxSpendable.decimal);
+      const divisor = Math.pow(10, maxSpendable.decimal);
 
-// Divide amountSat by the divisor
-      let amountBase = amountSat / divisor;
+      // Divide amountSat by the divisor
+      const amountBase = amountSat / divisor;
 
       console.log("maxSpendable: final ", amountBase);
       //get min spendable

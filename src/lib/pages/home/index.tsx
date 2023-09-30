@@ -91,7 +91,6 @@ const Home = () => {
             setOutput(asset);
           }
           if (asset.asset.symbol === "ETH" && asset.asset.type === "Native") {
-
             setInput(asset);
           }
         }

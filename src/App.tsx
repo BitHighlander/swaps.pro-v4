@@ -24,17 +24,17 @@ const ForceDarkMode = ({ children }) => {
 
 const App = () => {
   return (
-      <SwapProvider>
-        <ChakraProvider theme={theme}>
-          <ForceDarkMode>
-            <Router>
-              <Layout>
-                <Routings />
-              </Layout>
-            </Router>
-          </ForceDarkMode>
-        </ChakraProvider>
-      </SwapProvider>
+    <SwapProvider>
+      <ChakraProvider theme={theme}>
+        <ForceDarkMode>
+          <Router>
+            <Layout>
+              <Routings />
+            </Layout>
+          </Router>
+        </ForceDarkMode>
+      </ChakraProvider>
+    </SwapProvider>
   );
 };
 

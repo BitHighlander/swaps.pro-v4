@@ -80,13 +80,13 @@ const BeginSwap: React.FC<BeginSwapProps> = ({
     onOpen();
   };
 
-  const switchAssets = function() {
-    console.log("Switching assets!")
-    let inputNew = output;
-    let outputNew = input;
+  const switchAssets = function () {
+    console.log("Switching assets!");
+    const inputNew = output;
+    const outputNew = input;
     setInput(inputNew);
     setOutput(outputNew);
-  }
+  };
 
   return (
     <div>
@@ -101,13 +101,19 @@ const BeginSwap: React.FC<BeginSwapProps> = ({
               <div>
                 {chains.toString()}
                 <br />
-                <BlockchainSelect setInput={setInput} onClose={onClose}></BlockchainSelect>
+                <BlockchainSelect
+                  setInput={setInput}
+                  onClose={onClose}
+                ></BlockchainSelect>
                 {/*{JSON.stringify(walletData)}*/}
               </div>
             )}
             {modalType === "Select Output" && (
               <div>
-                <OutputSelect setOutput={setOutput} onClose={onClose}></OutputSelect>
+                <OutputSelect
+                  setOutput={setOutput}
+                  onClose={onClose}
+                ></OutputSelect>
               </div>
             )}
           </ModalBody>
@@ -158,7 +164,8 @@ const BeginSwap: React.FC<BeginSwapProps> = ({
           </Box>
           <ArrowUpDownIcon
             onClick={() => switchAssets()}
-            color="white" boxSize="2rem"
+            color="white"
+            boxSize="2rem"
           />
           <Box
             flex="1" // Adjust the flex property to control the width
