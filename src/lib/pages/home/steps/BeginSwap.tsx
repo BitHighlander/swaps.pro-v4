@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { QuoteRoute, SwapKitApi } from "@pioneer-platform/swapkit-api";
+import {UTXOEstimateFeeParams} from "@pioneer-platform/toolbox-utxo";
 import {
   Amount,
   AssetAmount,
@@ -26,13 +27,36 @@ const BeginSwap = ({ input, output, setRoute }) => {
       console.log("input: ", input);
       console.log("output: ", output);
 
-      const sellAsset = new AssetAmount(input.asset, input.balance);
-      const buyAsset = new AssetAmount(output.asset, output.balance);
+      //get max spendable
+      console.log("swapKit: ", swapKit);
+      console.log("input.chain: ", input.chain);
+      console.log("input.asset: ", input.asset.chain);
+      //TODO placeholder memo?
+      let feeParams:UTXOEstimateFeeParams = {
+        from: input.address,
+        memo: "THISISAPLACEHOLDERMEMOLARGERHTNEN64CHARS",
+      };
+      let maxSpendable = await swapKit.estimateMaxSendableAmount({chain:input.asset.chain,params:feeParams});
+      console.log("maxSpendable: ", maxSpendable);
+      console.log("maxSpendable: ", maxSpendable.amount().toString());
+      let amountSat = parseInt(maxSpendable.amount().toString())
+      console.log("maxSpendable: ", maxSpendable.decimal);
+      // Calculate the divisor: 10^decimal
+      let divisor = Math.pow(10, maxSpendable.decimal);
+
+// Divide amountSat by the divisor
+      let amountBase = amountSat / divisor;
+
+      console.log("maxSpendable: final ", amountBase);
+      //get min spendable
+
+      // const sellAsset = new AssetAmount(input.asset, input.balance);
+      // const buyAsset = new AssetAmount(output.asset, output.balance);
       // let sellAsset = new AssetEntity(input.asset.chain, input.asset.symbol);
       //let buyAsset = new AssetEntity(output.asset.chain, output.asset.symbol)
 
       const value = parseFloat(input.balance.toString());
-      const amount = Amount.fromNormalAmount(value);
+      const amount = Amount.fromNormalAmount(amountBase);
 
       const quoteEntry = {
         sellAsset: input.symbol + "." + input.symbol,

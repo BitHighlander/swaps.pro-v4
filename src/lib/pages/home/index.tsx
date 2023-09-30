@@ -21,6 +21,7 @@ import { SettingsIcon, AddIcon } from "@chakra-ui/icons";
 import { useSwap } from "swapkit-provider";
 // @ts-ignore
 import backgroundImage from "lib/assets/background/thorfox.webp"; // Adjust the path
+import ForkMeBanner from "lib/components/ForkMe";
 import BeginSwap from "./steps/BeginSwap"; // Updated import here
 import CompleteSwap from "./steps/CompleteSwap"; // Updated import here
 import SelectAssets from "./steps/SelectAssets"; // Updated import here
@@ -50,7 +51,7 @@ const Home = () => {
   const [showGoBack, setShowGoBack] = useState(false);
 
   useEffect(() => {
-    if (output && input && step === 0) {
+    if (swapKit && output && input && step === 0) {
       setIsContinueDisabled(false);
     }
   }, [input, output]);
@@ -170,6 +171,7 @@ const Home = () => {
 
   return (
     <div>
+      <ForkMeBanner />
       <Modal isOpen={isOpen} onClose={() => onClose()} size="xl">
         <ModalOverlay />
         <ModalContent>
