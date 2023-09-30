@@ -3026,7 +3026,7 @@
     "@pioneer-platform/swapkit-entities" "1.0.0-development.120"
     "@pioneer-platform/types" "1.0.0-development.106"
 
-"@pioneer-platform/helpers@0.0.0-development.114", "@pioneer-platform/helpers@workspace:*":
+"@pioneer-platform/helpers@0.0.0-development.114", "@pioneer-platform/helpers@^0.0.0-development.114", "@pioneer-platform/helpers@workspace:*":
   version "0.0.0-development.114"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/helpers/-/helpers-0.0.0-development.114.tgz#5e104a1aaa2d46d25ca5277d8a3cefbac8d1ffba"
   integrity sha512-CQ//WIwHahrO20o/IpG16CDOlute2ga+2/0IHWZ7WmiJsKnfQ2ou4U8jGjuyo3LQaoKhifOLYHezhurgBNuHFw==
