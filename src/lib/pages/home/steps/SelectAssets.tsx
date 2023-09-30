@@ -80,6 +80,14 @@ const BeginSwap: React.FC<BeginSwapProps> = ({
     onOpen();
   };
 
+  const switchAssets = function() {
+    console.log("Switching assets!")
+    let inputNew = output;
+    let outputNew = input;
+    setInput(inputNew);
+    setOutput(outputNew);
+  }
+
   return (
     <div>
       <Modal isOpen={isOpen} onClose={() => onClose()} size="xl">
@@ -148,7 +156,10 @@ const BeginSwap: React.FC<BeginSwapProps> = ({
               </>
             )}
           </Box>
-          <ArrowUpDownIcon color="white" boxSize="2rem" />
+          <ArrowUpDownIcon
+            onClick={() => switchAssets()}
+            color="white" boxSize="2rem"
+          />
           <Box
             flex="1" // Adjust the flex property to control the width
             h="10rem"
