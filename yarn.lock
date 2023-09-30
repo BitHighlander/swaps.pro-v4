@@ -3010,7 +3010,7 @@
     "@pioneer-platform/swapkit-entities" "1.0.0-development.120"
     "@pioneer-platform/types" "1.0.0-development.106"
 
-"@pioneer-platform/helpers@0.0.0-development.114", "@pioneer-platform/helpers@^0.0.0-development.114", "@pioneer-platform/helpers@workspace:*":
+"@pioneer-platform/helpers@0.0.0-development.114", "@pioneer-platform/helpers@workspace:*":
   version "0.0.0-development.114"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/helpers/-/helpers-0.0.0-development.114.tgz#5e104a1aaa2d46d25ca5277d8a3cefbac8d1ffba"
   integrity sha512-CQ//WIwHahrO20o/IpG16CDOlute2ga+2/0IHWZ7WmiJsKnfQ2ou4U8jGjuyo3LQaoKhifOLYHezhurgBNuHFw==
@@ -3018,7 +3018,7 @@
     "@pioneer-platform/swapkit-entities" "workspace:*"
     "@pioneer-platform/types" "workspace:*"
 
-"@pioneer-platform/keepkey@3.0.0", "@pioneer-platform/keepkey@^3.0.0":
+"@pioneer-platform/keepkey@3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/keepkey/-/keepkey-3.0.0.tgz#c18610ecad3a37c8bee71efd7e07a3eb7baa2b5a"
   integrity sha512-pxLlj3mgiHP34CFGshpMbCT0aTUHYkRPWRWcPOag643VaRRNbvaSelbxd8KQtft0HC3oLcqbkU1PQa1PxZXo8w==
@@ -11261,10 +11261,10 @@ swagger-client@^3.19.8:
     traverse "~0.6.6"
     url "~0.11.0"
 
-swapkit-provider@0.2.35:
-  version "0.2.35"
-  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.35.tgz#9d3fb8dded92f3761cf166a0ae39ec8366625f38"
-  integrity sha512-zwDr0gol6abZ6VcLlG5kiZVEaPeuXNXcjN0m1cZRqa+nZSJXQe2jSnfPuqaQQEAyGPWKOVWAWW64Nh4JNB4V1g==
+swapkit-provider@0.2.36:
+  version "0.2.36"
+  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.36.tgz#b3e7a700404d2798c82ce0cc1b0351ffc76452c2"
+  integrity sha512-dJXyTFKlDTK1ZZW5dA8xRmZMEWmiuD91KefPFLgHKIk+kDyjtEc9vZoG0nIgH4G2CwV7nqa4TBKzRqiCwIgp5w==
   dependencies:
     "@chakra-ui/icons" "^2.0.19"
     "@chakra-ui/react" "^2.6.0"
