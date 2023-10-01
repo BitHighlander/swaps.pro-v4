@@ -2995,66 +2995,58 @@
     "@babel/runtime" "^7.19.0"
     axios "0.27.2"
 
-"@pioneer-platform/evm-web3-wallets@^1.0.0-development.47":
-  version "1.0.0-development.47"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/evm-web3-wallets/-/evm-web3-wallets-1.0.0-development.47.tgz#5512cab7745c478129fc3c4509c79ef1036908ab"
-  integrity sha512-vZkbHMNW8u5CLwb6aJeMt0GjtuDEWJh5AI3DXVv9EQvr77h3yKt66NaTzmHhZoT4diWyq7+jw2OFEzq1PbkqcQ==
+"@pioneer-platform/evm-web3-wallets@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/evm-web3-wallets/-/evm-web3-wallets-3.0.1.tgz#b8a626874f08ca6a3d11df7e292c936a54cc8bdc"
+  integrity sha512-CROl7JDx9uORRxuxoQScdRhN2LkPXmYbbUAxx6p6VCPvlq8LDsv9Hwno8kXbcnA3LRPUBEL3F6gKqYVdibrhQw==
   dependencies:
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/helpers@0.0.0-development.112":
-  version "0.0.0-development.112"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/helpers/-/helpers-0.0.0-development.112.tgz#6bc954c2133034af19291fdf5ca2530cb8c82124"
-  integrity sha512-ZZos0wQqVbVM3qRGdEl9EhZjcfOt9cJCAPyxuRqBADc05rpL6Ux5cN6ZzJ5knJiyf3mj+8QM2XFo0w+JY+3xvQ==
+"@pioneer-platform/helpers@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/helpers/-/helpers-3.0.1.tgz#e3cd9acf16b4ec9ff7b9852243ce8c554479f8d5"
+  integrity sha512-ORRhKEQHuDZKwP07ptUSzmv3D30cYIBs2DunYpi/urFmf9V7CPUSxSrLCFaFzePUgQ4T66vcJLKnC0P3u+msyA==
   dependencies:
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.120"
-    "@pioneer-platform/types" "1.0.0-development.106"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/helpers@0.0.0-development.114", "@pioneer-platform/helpers@workspace:*":
-  version "0.0.0-development.114"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/helpers/-/helpers-0.0.0-development.114.tgz#5e104a1aaa2d46d25ca5277d8a3cefbac8d1ffba"
-  integrity sha512-CQ//WIwHahrO20o/IpG16CDOlute2ga+2/0IHWZ7WmiJsKnfQ2ou4U8jGjuyo3LQaoKhifOLYHezhurgBNuHFw==
-  dependencies:
-    "@pioneer-platform/swapkit-entities" "workspace:*"
-    "@pioneer-platform/types" "workspace:*"
-
-"@pioneer-platform/keepkey@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/keepkey/-/keepkey-3.0.0.tgz#c18610ecad3a37c8bee71efd7e07a3eb7baa2b5a"
-  integrity sha512-pxLlj3mgiHP34CFGshpMbCT0aTUHYkRPWRWcPOag643VaRRNbvaSelbxd8KQtft0HC3oLcqbkU1PQa1PxZXo8w==
+"@pioneer-platform/keepkey@3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/keepkey/-/keepkey-3.0.1.tgz#513bf881940d060f7989e5fc9d3ebdef4151e8fc"
+  integrity sha512-SKzIPdw8tOS9HeW2d98UGOfz0GdURKQB/waImtVDOTdPZkvE7yskbGGXtOl/82ewWV+HALyvFSHNX8aougmClQ==
   dependencies:
     "@cosmjs/stargate" "0.31.1"
     "@keepkey/keepkey-sdk" "^0.2.52"
-    "@pioneer-platform/helpers" "workspace:*"
+    "@pioneer-platform/helpers" "3.0.1"
     "@pioneer-platform/pioneer-coins" "^8.1.84"
-    "@pioneer-platform/swapkit-entities" "workspace:*"
-    "@pioneer-platform/types" "workspace:*"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/keplr@^1.0.0-development.61":
-  version "1.0.0-development.61"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/keplr/-/keplr-1.0.0-development.61.tgz#787ba33df7256299d6090e27be41382356fcd2fb"
-  integrity sha512-vVnUD7sXKbHBxmqAi2YGlwHiScz+oF+jBSbnfnPdO27CTodIfiocROVwgeZgte17RrXcGvepMxjwwXLY1ieLTg==
+"@pioneer-platform/keplr@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/keplr/-/keplr-3.0.1.tgz#e495910717877e8aa01b2257858ead68934e25c0"
+  integrity sha512-N6wCWz/jfd3r+/NeZ4K6kshYZYWenHrWwHltx9qPJ4ZKKGDfrn3pxLDH+iZpWE+ry4EowgEJlU/4YEYU/hdDkQ==
   dependencies:
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/keystore@^1.0.0-development.239":
-  version "1.0.0-development.239"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/keystore/-/keystore-1.0.0-development.239.tgz#077752f1ca45ad86450a9a3e1dca298ec153cd58"
-  integrity sha512-FtnLbaAgGoaAiCEEEdrHw0QRpdVIJlg3JyhQKYHQMiQHv9DJfArivXfxyeOu9FsZNFB2oBpCnu9WtSggLwa+qg==
+"@pioneer-platform/keystore@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/keystore/-/keystore-3.0.1.tgz#b3311ac1b46f707c73372fab3339b0a213480dec"
+  integrity sha512-HA+XvzSfAFBIaXd2ABDqnjflBgb/Ib4aw7ipZsnAb8JwX85amaAIBYUfuPJNW7/QovMLdq34rf1s+IUjex4LmA==
   dependencies:
     "@ethersproject/hdnode" "5.7.0"
     "@ethersproject/wallet" "5.7.0"
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.122"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
     blakejs "1.2.1"
     long "4.0.0"
     uuid "9.0.0"
 
-"@pioneer-platform/ledger@^1.0.0-development.266":
-  version "1.0.0-development.266"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/ledger/-/ledger-1.0.0-development.266.tgz#af9202b7cf1145f4bd993fdecc772597811e5eec"
-  integrity sha512-k1zdZa3AEy5QXh+ywsCVAEVzgFlwYQkV7ETrQ32xm5mMZL6SEg0fX3HRhTq4HixGTI1Sfuedh3/BvjhVvJdPXQ==
+"@pioneer-platform/ledger@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/ledger/-/ledger-3.0.1.tgz#4aa2e5d8ed4a5a87ff89cc011152f4eeab3db699"
+  integrity sha512-xEY5BGs4EstC9+0+DwHGWsvK6lxpWl8bj+5ZdnXhYK6/D5/65Y0RARdKnEk/HwiEKjEKKBv9g2UtR3ZtmxrYkg==
   dependencies:
     "@ledgerhq/devices" "8.0.7"
     "@ledgerhq/errors" "6.14.0"
@@ -3063,9 +3055,9 @@
     "@ledgerhq/hw-app-eth" "6.34.3"
     "@ledgerhq/hw-transport" "6.28.8"
     "@ledgerhq/hw-transport-webusb" "6.27.19"
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.122"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
     ripemd160 "2.0.2"
 
 "@pioneer-platform/loggerdog@^8.0.1":
@@ -3086,34 +3078,55 @@
     ts-node "^10.9.1"
     typescript "^5.0.2"
 
-"@pioneer-platform/metamask@^1.0.0-development.1":
-  version "1.0.0-development.1"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/metamask/-/metamask-1.0.0-development.1.tgz#a30b512d680cd92ebf877a1940163e0fd1af4a64"
-  integrity sha512-7ntkkBOsLJgXaM10ysvV7zZxXKQV8z7RrR8AQ4HVcTG9PwApx/HmY5F8Kt2HqsYsmRFR6lf9R+E++VU+ADNSUQ==
+"@pioneer-platform/metamask@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/metamask/-/metamask-3.0.1.tgz#717c8c0768c3f1a9a39b3931cbb8f0bb6cee18bd"
+  integrity sha512-LxxvpLSe1WedsGg3mavHFyCvLd5wFJj4aTRExOdTtXm6PBB9b36NJVJe/Tfe6Myw2Ketvq4RA7Teyl3Zro1r2g==
   dependencies:
     "@cosmjs/stargate" "0.31.1"
-    "@pioneer-platform/helpers" "0.0.0-development.112"
+    "@pioneer-platform/helpers" "3.0.1"
     "@pioneer-platform/pioneer-coins" "^8.1.84"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.120"
-    "@pioneer-platform/types" "1.0.0-development.106"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
     "@shapeshiftoss/hdwallet-core" "^1.50.5"
     "@shapeshiftoss/hdwallet-shapeshift-multichain" "1.50.5-alpha.72"
     "@shapeshiftoss/metamask-snaps-adapter" "^1.0.3"
 
-"@pioneer-platform/okx@^1.0.0-development.54":
-  version "1.0.0-development.54"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/okx/-/okx-1.0.0-development.54.tgz#15cdeadaec001b1a6b54afdd93614a9dcd1db9ab"
-  integrity sha512-s/zJG1dGfNiMeYA9bF9wJ12SKGDfTV6t69gAcDKrJXcvsPR2rHZRA9O2AEhb6A9dU9r2iA86gdbW5bOa+ob82Q==
+"@pioneer-platform/okx@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/okx/-/okx-3.0.1.tgz#d3bf9d133b20c74c20cb3b249f155a59be17eec5"
+  integrity sha512-0s9KPLtrRMC1ZKtQACAbcVf4QGkmgL6CXGVrDCFEWQtv06e3+0bUjBx4DYLsNfkiM+ro6oN9/7az/9XoeMJYEA==
   dependencies:
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/pioneer-client@^9.0.18":
+"@pioneer-platform/pioneer-client@^3.0.1":
   version "9.0.18"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-client/-/pioneer-client-9.0.18.tgz#0c0cad58729307350e50d42248909e96cb2b2b51"
   integrity sha512-cy/oaPSbz8xnbHaQ5HjuVCbg/Js7vhOxo7alPklJfPyjGcE8vCTVF5FbQCpJhUyQKuzjr4KyHRe9dIvpcsSECA==
   dependencies:
     swagger-client "^3.19.8"
+
+"@pioneer-platform/pioneer-coins@^3.0.1":
+  version "8.1.85"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-coins/-/pioneer-coins-8.1.85.tgz#c003e6b88db996307cadf2cb27a10b3887dd61fd"
+  integrity sha512-LN8kh5u5lWo5zhYRz2Obom0BnhmtLyHXSUSFRWtr/HTsfqSUntKztndQ2H5w7LLPjVDjaV+RaQuMoL6kD8P5zA==
+  dependencies:
+    "@pioneer-platform/loggerdog" "^8.1.31"
+    bech32 "^1.1.4"
+    bignumber.js "^9.0.1"
+    bitcoin-regex "^2.0.0"
+    bitcoincash-regex "^1.1.8"
+    bs58check "^3.0.1"
+    crypto-js "^4.0.0"
+    dash-regex "^1.0.10"
+    dogecoin-regex "^1.0.9"
+    ethereum-regex "^1.1.12"
+    ethereum-tx-decoder "^3.0.0"
+    litecoin-regex "^1.0.8"
+    monero-regex "^1.0.8"
+    neo-regex "^1.0.7"
+    ripple-regex "^1.1.8"
 
 "@pioneer-platform/pioneer-coins@^8.1.19":
   version "8.1.72"
@@ -3156,74 +3169,37 @@
     neo-regex "^1.0.7"
     ripple-regex "^1.1.8"
 
-"@pioneer-platform/pioneer-coins@^8.1.85":
-  version "8.1.85"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-coins/-/pioneer-coins-8.1.85.tgz#c003e6b88db996307cadf2cb27a10b3887dd61fd"
-  integrity sha512-LN8kh5u5lWo5zhYRz2Obom0BnhmtLyHXSUSFRWtr/HTsfqSUntKztndQ2H5w7LLPjVDjaV+RaQuMoL6kD8P5zA==
+"@pioneer-platform/swapkit-api@3.0.1", "@pioneer-platform/swapkit-api@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-api/-/swapkit-api-3.0.1.tgz#0f1d0f649d81c68fce63dec1bab44d0f842daadc"
+  integrity sha512-HRVqkVC0t2O8ut9ekyEBZWuSW4/zM1inxD7qpLXoLLZ1kLKNVxHALpazV1FFhai4gvjWdHJvHjgraETCzbkkhg==
   dependencies:
-    "@pioneer-platform/loggerdog" "^8.1.31"
-    bech32 "^1.1.4"
-    bignumber.js "^9.0.1"
-    bitcoin-regex "^2.0.0"
-    bitcoincash-regex "^1.1.8"
-    bs58check "^3.0.1"
-    crypto-js "^4.0.0"
-    dash-regex "^1.0.10"
-    dogecoin-regex "^1.0.9"
-    ethereum-regex "^1.1.12"
-    ethereum-tx-decoder "^3.0.0"
-    litecoin-regex "^1.0.8"
-    monero-regex "^1.0.8"
-    neo-regex "^1.0.7"
-    ripple-regex "^1.1.8"
+    "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/swapkit-api@0.1.0-development.50", "@pioneer-platform/swapkit-api@^0.1.0-development.50":
-  version "0.1.0-development.50"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-api/-/swapkit-api-0.1.0-development.50.tgz#be6c005ddda12d350f5bf98dd4c62ab1ca98d8f2"
-  integrity sha512-qvCsUK8eLqNsbZ5HZha59CpX/HhXOcDEHxeylZ8hpa7qNB7OFXzHGRIHStn3C27yL5kT5rult8uIE5ax7XxVUQ==
-  dependencies:
-    "@pioneer-platform/types" "1.0.0-development.107"
-
-"@pioneer-platform/swapkit-core@^1.0.0-development.219":
-  version "1.0.0-development.219"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-core/-/swapkit-core-1.0.0-development.219.tgz#2dad0f9cd24594d219f3651406bbc828e798c626"
-  integrity sha512-eXAOp9fGneOB8UdPcw7VpurHWvoPGvL6G4ErqEHKYzf1yYiO7iIx3BCtsWjgneE4qR0bCukJsa7lGjOH4CjdvA==
+"@pioneer-platform/swapkit-core@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-core/-/swapkit-core-3.0.1.tgz#f5344afd157ec702ace26e9f62c861524f8c616b"
+  integrity sha512-fNVhmTPdl8Qn300MRCqIZwakyTuhH8hWmjbl8QK1ypIfybllnJ7tUKgvB0bkM72grCapEmkHtYFjY81wNXVEFA==
   dependencies:
     "@ethersproject/bytes" "5.7.0"
     "@ethersproject/units" "5.7.0"
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.122"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
     bignumber.js "9.1.2"
 
-"@pioneer-platform/swapkit-entities@1.0.0-development.120":
-  version "1.0.0-development.120"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-entities/-/swapkit-entities-1.0.0-development.120.tgz#fd29c9760449f41d990d1bb3ed68812736ab394a"
-  integrity sha512-CTiMBidtCklTgTkDRDdoZrzv/9H6xZPwoHeN7TXdwU7XuRh7/cQ1iGMjyP4XAJAPVZTEqnKHY/p6RDA/UTTdvA==
+"@pioneer-platform/swapkit-entities@3.0.1", "@pioneer-platform/swapkit-entities@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-entities/-/swapkit-entities-3.0.1.tgz#a00e35fb0eef8f79decbc8b23f890a2180adb316"
+  integrity sha512-a1S+7yQx6muxQF/A7qd0bOjv9148LcTaOUyFkGGCkdQl9XQZxmuw89jidwuFstYJZSiJ2s8ElTQ3ytLQDG7D9A==
   dependencies:
-    "@pioneer-platform/types" "1.0.0-development.106"
+    "@pioneer-platform/types" "3.0.1"
     tiny-invariant "1.3.1"
 
-"@pioneer-platform/swapkit-entities@1.0.0-development.122", "@pioneer-platform/swapkit-entities@workspace:*":
-  version "1.0.0-development.122"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-entities/-/swapkit-entities-1.0.0-development.122.tgz#dabb721b647898b33cffb0693008227653bc4d53"
-  integrity sha512-fTqFniwHPavTy8cP/YfOAi19ZtS96PEbq+J2kKLr43xRf9yOmY0kzvYiouwUSMRZ7eyT5nk3c3jLI8X31lPEpw==
-  dependencies:
-    "@pioneer-platform/types" "1.0.0-development.107"
-    tiny-invariant "1.3.1"
-
-"@pioneer-platform/swapkit-entities@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-entities/-/swapkit-entities-3.0.0.tgz#ba96a79bee7284338f251a126f0244820f02ba0a"
-  integrity sha512-Bb5pC5yh4jkNC/6GFGMLt52m94e6w12zIJmSquTZX3rn4wyN3qwmwQl1KL8iMsqPnqqqPy3qNXO9w7o+uC4OyQ==
-  dependencies:
-    "@pioneer-platform/types" "workspace:*"
-    tiny-invariant "1.3.1"
-
-"@pioneer-platform/toolbox-cosmos@^1.0.0-development.166":
-  version "1.0.0-development.166"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/toolbox-cosmos/-/toolbox-cosmos-1.0.0-development.166.tgz#83a57d1cf09aba476d388cac6d86a3764c5ca973"
-  integrity sha512-Hsq3Z2ZppqQPcyJMVMZMtH4XpkyUxaI7ZOrzVrauQcBMkLR+32BPfj3zJiInfjBp47wOWRLypK339S5uOLdQrQ==
+"@pioneer-platform/toolbox-cosmos@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/toolbox-cosmos/-/toolbox-cosmos-3.0.1.tgz#966975535ee76ede17a5d3ef40fdf7ed51fa46cb"
+  integrity sha512-XOhy0wJ1lBOxz7BQgYxNHBLcVXU/WeMcKxzDPXNQt99QV+Kl9CkAXBK51X5m9UcCYy0gi8sxPolAnyVS4Vj+5g==
   dependencies:
     "@cosmjs/amino" "0.31.1"
     "@cosmjs/crypto" "0.31.1"
@@ -3231,10 +3207,10 @@
     "@cosmjs/math" "0.31.1"
     "@cosmjs/proto-signing" "0.31.1"
     "@cosmjs/stargate" "0.31.1"
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/swapkit-api" "0.1.0-development.50"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.122"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/swapkit-api" "3.0.1"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
     "@scure/base" "1.1.3"
     "@scure/bip32" "1.3.2"
     base64-js "1.5.1"
@@ -3248,10 +3224,10 @@
     protocol-buffers-encodings "1.2.0"
     tiny-secp256k1 "1.1.6"
 
-"@pioneer-platform/toolbox-evm@^1.0.0-development.169":
-  version "1.0.0-development.169"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/toolbox-evm/-/toolbox-evm-1.0.0-development.169.tgz#cd0150000414582b05581871f0aeaa6910404145"
-  integrity sha512-3Ak42Ky9tCWFzCUinuKYH18IDKTVuwDO+G5ECdqT4pQPp6edpYmfhK4PnQsCTXGo6yxIydBSHdpQq0UUceZpsA==
+"@pioneer-platform/toolbox-evm@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/toolbox-evm/-/toolbox-evm-3.0.1.tgz#2ccbe629e9eb37bb993771dd78e7798b962942ee"
+  integrity sha512-n9h/aM/3gfu8i0ed0ivlFrh0L14mPcbBHiju3UhhHUEZ2InASYm2VFa9qJ6n7UqKytZ6B17taj6lFYmClHRaFQ==
   dependencies:
     "@ethersproject/abstract-provider" "5.7.0"
     "@ethersproject/abstract-signer" "5.7.0"
@@ -3264,20 +3240,20 @@
     "@ethersproject/strings" "5.7.0"
     "@ethersproject/transactions" "5.7.0"
     "@ethersproject/units" "5.7.0"
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.122"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/toolbox-utxo@^1.0.0-development.148":
-  version "1.0.0-development.148"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/toolbox-utxo/-/toolbox-utxo-1.0.0-development.148.tgz#44e279f3a17ca2f036b6abe1c5240faf3e7252ea"
-  integrity sha512-FhyeXA29odQm3enUHEdy3NAekLvoxNUwdTuv0NqVQuC34Juz93wIZHwxAmlqjHJlj0coJAP7bUe64KifkwoHEw==
+"@pioneer-platform/toolbox-utxo@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/toolbox-utxo/-/toolbox-utxo-3.0.1.tgz#21fe3bd2d69b5e941e04b20a715f4b0ee07a6bba"
+  integrity sha512-sWzBWvF2gs2ReH6vCFT/489R4rKJLivGCMwLaM4HgJE6vec9sEMO6UlvYRT+Rd/xW23dGws8QMawhyNf35s79Q==
   dependencies:
     "@ethersproject/bignumber" "5.7.0"
     "@ethersproject/units" "5.7.0"
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.122"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
     "@psf/bitcoincashjs-lib" "4.0.3"
     "@scure/bip32" "1.3.2"
     "@scure/bip39" "1.2.1"
@@ -3287,45 +3263,35 @@
     ecpair "2.0.1"
     tiny-secp256k1 "1.1.6"
 
-"@pioneer-platform/trezor@^1.0.0-development.77":
-  version "1.0.0-development.77"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/trezor/-/trezor-1.0.0-development.77.tgz#da6ca71107bd2ab38d0c37691f2cd461cdfaeaf4"
-  integrity sha512-DjomOfmSNkeLysDunMjnoGuIzodCG6sHBXRBnXAsLy+WhF48OZGLF4e2VN978CcK20/v+W/0/DenOqkfmWiyvQ==
+"@pioneer-platform/trezor@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/trezor/-/trezor-3.0.1.tgz#5eb6ad4cbeb72f7eb12a57fc1441900a02786ccd"
+  integrity sha512-ydiahS25TsY+ox7PdPTkRb2e1VCYc5LYr6RqIjN6vfVpvcbQbD5umwZ+wDkICH/LY2K8ToZWN/zgvAuyl6wrZQ==
   dependencies:
-    "@pioneer-platform/helpers" "0.0.0-development.114"
-    "@pioneer-platform/swapkit-entities" "1.0.0-development.122"
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/helpers" "3.0.1"
+    "@pioneer-platform/swapkit-entities" "3.0.1"
+    "@pioneer-platform/types" "3.0.1"
     "@trezor/connect-web" "9.1.1"
 
-"@pioneer-platform/types@1.0.0-development.106":
-  version "1.0.0-development.106"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/types/-/types-1.0.0-development.106.tgz#4c8b1770090e271e0eb04c7ede0f4c6df719550d"
-  integrity sha512-uf2RWjnJpQbRLCAYG6atEDhzJZJ/HsRTFB80WU2YJlTfo3cUrJdQkK3FqQzTXDxMy8OuHj9PMstocwW97w4Z9g==
+"@pioneer-platform/types@3.0.1", "@pioneer-platform/types@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/types/-/types-3.0.1.tgz#522e60cd29e9dd66685d18f6695fbbcdcbea3a28"
+  integrity sha512-6woyXh+1AQLeLKeus3spoi5MaS6YbWFsDY4QCJZzEO+mri1UrRQssp9PjvoSStvHHpr18frFwLTwq/H/EvNGlA==
 
-"@pioneer-platform/types@1.0.0-development.107", "@pioneer-platform/types@workspace:*":
-  version "1.0.0-development.107"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/types/-/types-1.0.0-development.107.tgz#58c978d84217c269b43bff900c5c1fb42f0f0449"
-  integrity sha512-V/GXmRvT5AhvuOOlZTqD73XwCElXxUhvv6CPOnoWOIe/MI0omr6Mk3kS8JcDoyNlxEbFR+0uGaVdfbm+ob2TOw==
-
-"@pioneer-platform/types@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/types/-/types-3.0.0.tgz#29f4991a7f4e607c4425f28102b12ccc4e132859"
-  integrity sha512-OABrs8Wso4jp92VBrKgLEPW7W1XT36zos4DX3u8cxAy+DvH6qzUDpUgCxulBpaUeeErvA+a5cVJpPBRdhszBQg==
-
-"@pioneer-platform/walletconnect@^2.0.0-development.59":
-  version "2.0.0-development.59"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/walletconnect/-/walletconnect-2.0.0-development.59.tgz#5fc5687acd5c7b392cf2d6ffe267b5d46156d34a"
-  integrity sha512-N1IsfYlyfKYAvqaUrS2zAzaCFalHW+ON3sxfYN9KFVRwtBbo655/oQnmyT+Do/uEEREjbEmwXU7Xgufpq7Jiuw==
+"@pioneer-platform/walletconnect@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/walletconnect/-/walletconnect-3.0.1.tgz#8fdf384076481e8693f4a69cde65cbf4a2054e91"
+  integrity sha512-VZ9B5VsUub+AP1P3elWBXf8ngl7tikuFugUmp6Oz1fEb3rcOMzjSRi7mLO2+40T6fn7JtRpcOj33TPWFYCLGrg==
   dependencies:
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/types" "3.0.1"
     "@walletconnect/modal-sign-html" "^2.6.1"
 
-"@pioneer-platform/xdefi@^1.0.0-development.78":
-  version "1.0.0-development.78"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/xdefi/-/xdefi-1.0.0-development.78.tgz#b855d3dee2cffbd7f901db42113e2891247a3e69"
-  integrity sha512-toniqUR90xStaWXzL47avzlh/dgwVJ8unIkM0N43X7Abp67Ry97wJ4O47ZBxxvY+WM5rYGAXpi8yk1uiYkK2qA==
+"@pioneer-platform/xdefi@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/xdefi/-/xdefi-3.0.1.tgz#03f78fd77fafdb27bccc40dfc0b636d5b7782f36"
+  integrity sha512-40sqhB6XnbPRoB7ZB0OQxytLjOuxNjBvVlQ1P9wze/CFnFRNie4cS0sJCVGtsFz8CzLvMiQOShaiBhk59/N+vw==
   dependencies:
-    "@pioneer-platform/types" "1.0.0-development.107"
+    "@pioneer-platform/types" "3.0.1"
 
 "@pkgr/utils@^2.3.1":
   version "2.4.2"
@@ -11261,10 +11227,10 @@ swagger-client@^3.19.8:
     traverse "~0.6.6"
     url "~0.11.0"
 
-swapkit-provider@0.2.36:
-  version "0.2.36"
-  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.36.tgz#b3e7a700404d2798c82ce0cc1b0351ffc76452c2"
-  integrity sha512-dJXyTFKlDTK1ZZW5dA8xRmZMEWmiuD91KefPFLgHKIk+kDyjtEc9vZoG0nIgH4G2CwV7nqa4TBKzRqiCwIgp5w==
+swapkit-provider@0.2.37:
+  version "0.2.37"
+  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.37.tgz#1c2f4b5c311b51a3e0fd4b41a1009b7a9367315d"
+  integrity sha512-a7lInsdx465r5LsWM3xSdiTZgl6k8QDnMuhb1kzLBxN4gagv4A6ZudP/6zh/L2eucPmswMV1DVr3BaRgA2uFEA==
   dependencies:
     "@chakra-ui/icons" "^2.0.19"
     "@chakra-ui/react" "^2.6.0"
@@ -11273,25 +11239,25 @@ swapkit-provider@0.2.36:
     "@esbuild-plugins/node-globals-polyfill" "^0.2.3"
     "@esbuild-plugins/node-modules-polyfill" "^0.2.2"
     "@fontsource/plus-jakarta-sans" "^4.5.11"
-    "@pioneer-platform/evm-web3-wallets" "^1.0.0-development.47"
-    "@pioneer-platform/keepkey" "3.0.0"
-    "@pioneer-platform/keplr" "^1.0.0-development.61"
-    "@pioneer-platform/keystore" "^1.0.0-development.239"
-    "@pioneer-platform/ledger" "^1.0.0-development.266"
-    "@pioneer-platform/metamask" "^1.0.0-development.1"
-    "@pioneer-platform/okx" "^1.0.0-development.54"
-    "@pioneer-platform/pioneer-client" "^9.0.18"
-    "@pioneer-platform/pioneer-coins" "^8.1.85"
-    "@pioneer-platform/swapkit-api" "^0.1.0-development.50"
-    "@pioneer-platform/swapkit-core" "^1.0.0-development.219"
-    "@pioneer-platform/swapkit-entities" "^3.0.0"
-    "@pioneer-platform/toolbox-cosmos" "^1.0.0-development.166"
-    "@pioneer-platform/toolbox-evm" "^1.0.0-development.169"
-    "@pioneer-platform/toolbox-utxo" "^1.0.0-development.148"
-    "@pioneer-platform/trezor" "^1.0.0-development.77"
-    "@pioneer-platform/types" "^3.0.0"
-    "@pioneer-platform/walletconnect" "^2.0.0-development.59"
-    "@pioneer-platform/xdefi" "^1.0.0-development.78"
+    "@pioneer-platform/evm-web3-wallets" "^3.0.1"
+    "@pioneer-platform/keepkey" "3.0.1"
+    "@pioneer-platform/keplr" "^3.0.1"
+    "@pioneer-platform/keystore" "^3.0.1"
+    "@pioneer-platform/ledger" "^3.0.1"
+    "@pioneer-platform/metamask" "^3.0.1"
+    "@pioneer-platform/okx" "^3.0.1"
+    "@pioneer-platform/pioneer-client" "^3.0.1"
+    "@pioneer-platform/pioneer-coins" "^3.0.1"
+    "@pioneer-platform/swapkit-api" "^3.0.1"
+    "@pioneer-platform/swapkit-core" "^3.0.1"
+    "@pioneer-platform/swapkit-entities" "^3.0.1"
+    "@pioneer-platform/toolbox-cosmos" "^3.0.1"
+    "@pioneer-platform/toolbox-evm" "^3.0.1"
+    "@pioneer-platform/toolbox-utxo" "^3.0.1"
+    "@pioneer-platform/trezor" "^3.0.1"
+    "@pioneer-platform/types" "^3.0.1"
+    "@pioneer-platform/walletconnect" "^3.0.1"
+    "@pioneer-platform/xdefi" "^3.0.1"
     "@types/uuid" "^9.0.1"
     assert "^2.0.0"
     dotenv "^16.3.1"
