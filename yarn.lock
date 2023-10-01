@@ -3002,7 +3002,7 @@
   dependencies:
     "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/helpers@3.0.1":
+"@pioneer-platform/helpers@3.0.1", "@pioneer-platform/helpers@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/helpers/-/helpers-3.0.1.tgz#e3cd9acf16b4ec9ff7b9852243ce8c554479f8d5"
   integrity sha512-ORRhKEQHuDZKwP07ptUSzmv3D30cYIBs2DunYpi/urFmf9V7CPUSxSrLCFaFzePUgQ4T66vcJLKnC0P3u+msyA==
@@ -3100,33 +3100,12 @@
     "@pioneer-platform/helpers" "3.0.1"
     "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/pioneer-client@^3.0.1":
+"@pioneer-platform/pioneer-client@latest":
   version "9.0.18"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-client/-/pioneer-client-9.0.18.tgz#0c0cad58729307350e50d42248909e96cb2b2b51"
   integrity sha512-cy/oaPSbz8xnbHaQ5HjuVCbg/Js7vhOxo7alPklJfPyjGcE8vCTVF5FbQCpJhUyQKuzjr4KyHRe9dIvpcsSECA==
   dependencies:
     swagger-client "^3.19.8"
-
-"@pioneer-platform/pioneer-coins@^3.0.1":
-  version "8.1.85"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-coins/-/pioneer-coins-8.1.85.tgz#c003e6b88db996307cadf2cb27a10b3887dd61fd"
-  integrity sha512-LN8kh5u5lWo5zhYRz2Obom0BnhmtLyHXSUSFRWtr/HTsfqSUntKztndQ2H5w7LLPjVDjaV+RaQuMoL6kD8P5zA==
-  dependencies:
-    "@pioneer-platform/loggerdog" "^8.1.31"
-    bech32 "^1.1.4"
-    bignumber.js "^9.0.1"
-    bitcoin-regex "^2.0.0"
-    bitcoincash-regex "^1.1.8"
-    bs58check "^3.0.1"
-    crypto-js "^4.0.0"
-    dash-regex "^1.0.10"
-    dogecoin-regex "^1.0.9"
-    ethereum-regex "^1.1.12"
-    ethereum-tx-decoder "^3.0.0"
-    litecoin-regex "^1.0.8"
-    monero-regex "^1.0.8"
-    neo-regex "^1.0.7"
-    ripple-regex "^1.1.8"
 
 "@pioneer-platform/pioneer-coins@^8.1.19":
   version "8.1.72"
@@ -3152,6 +3131,27 @@
   version "8.1.84"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-coins/-/pioneer-coins-8.1.84.tgz#b98cbaf2023dc6ae05742d0a447de34fd96e2bd4"
   integrity sha512-odZTQOM/5tN5+1KLQpKXORRPf8WiCz1rf67md1+munjZLvrGxPnHlP+3qnWmRfO+BExRdErx850K3NMr9Jx/LA==
+  dependencies:
+    "@pioneer-platform/loggerdog" "^8.1.31"
+    bech32 "^1.1.4"
+    bignumber.js "^9.0.1"
+    bitcoin-regex "^2.0.0"
+    bitcoincash-regex "^1.1.8"
+    bs58check "^3.0.1"
+    crypto-js "^4.0.0"
+    dash-regex "^1.0.10"
+    dogecoin-regex "^1.0.9"
+    ethereum-regex "^1.1.12"
+    ethereum-tx-decoder "^3.0.0"
+    litecoin-regex "^1.0.8"
+    monero-regex "^1.0.8"
+    neo-regex "^1.0.7"
+    ripple-regex "^1.1.8"
+
+"@pioneer-platform/pioneer-coins@latest":
+  version "8.1.85"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-coins/-/pioneer-coins-8.1.85.tgz#c003e6b88db996307cadf2cb27a10b3887dd61fd"
+  integrity sha512-LN8kh5u5lWo5zhYRz2Obom0BnhmtLyHXSUSFRWtr/HTsfqSUntKztndQ2H5w7LLPjVDjaV+RaQuMoL6kD8P5zA==
   dependencies:
     "@pioneer-platform/loggerdog" "^8.1.31"
     bech32 "^1.1.4"
@@ -11227,10 +11227,10 @@ swagger-client@^3.19.8:
     traverse "~0.6.6"
     url "~0.11.0"
 
-swapkit-provider@0.2.37:
-  version "0.2.37"
-  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.37.tgz#1c2f4b5c311b51a3e0fd4b41a1009b7a9367315d"
-  integrity sha512-a7lInsdx465r5LsWM3xSdiTZgl6k8QDnMuhb1kzLBxN4gagv4A6ZudP/6zh/L2eucPmswMV1DVr3BaRgA2uFEA==
+swapkit-provider@0.2.38:
+  version "0.2.38"
+  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.38.tgz#a048e323045d28b409b084ecede70643197c5034"
+  integrity sha512-FcziiN8+Z6PQPatNNnffAoiK/3IG9b3RQwS1EdqAM8yg2wlKxbnvqXNcWo/tnt3D9zzHz+EiboWJKeqtkwjESg==
   dependencies:
     "@chakra-ui/icons" "^2.0.19"
     "@chakra-ui/react" "^2.6.0"
@@ -11240,14 +11240,15 @@ swapkit-provider@0.2.37:
     "@esbuild-plugins/node-modules-polyfill" "^0.2.2"
     "@fontsource/plus-jakarta-sans" "^4.5.11"
     "@pioneer-platform/evm-web3-wallets" "^3.0.1"
+    "@pioneer-platform/helpers" "^3.0.1"
     "@pioneer-platform/keepkey" "3.0.1"
     "@pioneer-platform/keplr" "^3.0.1"
     "@pioneer-platform/keystore" "^3.0.1"
     "@pioneer-platform/ledger" "^3.0.1"
     "@pioneer-platform/metamask" "^3.0.1"
     "@pioneer-platform/okx" "^3.0.1"
-    "@pioneer-platform/pioneer-client" "^3.0.1"
-    "@pioneer-platform/pioneer-coins" "^3.0.1"
+    "@pioneer-platform/pioneer-client" latest
+    "@pioneer-platform/pioneer-coins" latest
     "@pioneer-platform/swapkit-api" "^3.0.1"
     "@pioneer-platform/swapkit-core" "^3.0.1"
     "@pioneer-platform/swapkit-entities" "^3.0.1"
