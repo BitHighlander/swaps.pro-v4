@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
+//@ts-ignore
 import { QuoteRoute, SwapKitApi } from "@pioneer-platform/swapkit-api";
+//@ts-ignore
 import { UTXOEstimateFeeParams } from "@pioneer-platform/toolbox-utxo";
 import {
   Amount,
   AssetAmount,
   AssetEntity,
+  //@ts-ignore
 } from "@pioneer-platform/swapkit-entities";
 // @ts-ignore
 import calculatingAnimation from "lib/assets/gif/calculating.gif";
