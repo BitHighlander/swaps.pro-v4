@@ -3100,13 +3100,6 @@
     "@pioneer-platform/helpers" "3.0.1"
     "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/pioneer-client@latest":
-  version "9.0.18"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-client/-/pioneer-client-9.0.18.tgz#0c0cad58729307350e50d42248909e96cb2b2b51"
-  integrity sha512-cy/oaPSbz8xnbHaQ5HjuVCbg/Js7vhOxo7alPklJfPyjGcE8vCTVF5FbQCpJhUyQKuzjr4KyHRe9dIvpcsSECA==
-  dependencies:
-    swagger-client "^3.19.8"
-
 "@pioneer-platform/pioneer-coins@^8.1.19":
   version "8.1.72"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-coins/-/pioneer-coins-8.1.72.tgz#2dacb3ccd78bf5ae84155aa39e90ebeff2bb0534"
@@ -3148,7 +3141,7 @@
     neo-regex "^1.0.7"
     ripple-regex "^1.1.8"
 
-"@pioneer-platform/pioneer-coins@^8.1.85", "@pioneer-platform/pioneer-coins@latest":
+"@pioneer-platform/pioneer-coins@^8.1.85":
   version "8.1.85"
   resolved "https://registry.yarnpkg.com/@pioneer-platform/pioneer-coins/-/pioneer-coins-8.1.85.tgz#c003e6b88db996307cadf2cb27a10b3887dd61fd"
   integrity sha512-LN8kh5u5lWo5zhYRz2Obom0BnhmtLyHXSUSFRWtr/HTsfqSUntKztndQ2H5w7LLPjVDjaV+RaQuMoL6kD8P5zA==
@@ -3176,10 +3169,10 @@
   dependencies:
     "@pioneer-platform/types" "3.0.1"
 
-"@pioneer-platform/swapkit-core@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-core/-/swapkit-core-3.0.1.tgz#f5344afd157ec702ace26e9f62c861524f8c616b"
-  integrity sha512-fNVhmTPdl8Qn300MRCqIZwakyTuhH8hWmjbl8QK1ypIfybllnJ7tUKgvB0bkM72grCapEmkHtYFjY81wNXVEFA==
+"@pioneer-platform/swapkit-core@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/swapkit-core/-/swapkit-core-3.0.2.tgz#ef62082d8ea85c3e8cfc3931a16192d3c12653fd"
+  integrity sha512-s/6S5KN6IdDXQuoih23O8S2aafjSvu6/TfvYu1u1HdP6H9zPIm9T9G2tGSjPFZDD1ieOjokiL0w1tYnNyC69iQ==
   dependencies:
     "@ethersproject/bytes" "5.7.0"
     "@ethersproject/units" "5.7.0"
@@ -3278,10 +3271,10 @@
   resolved "https://registry.yarnpkg.com/@pioneer-platform/types/-/types-3.0.1.tgz#522e60cd29e9dd66685d18f6695fbbcdcbea3a28"
   integrity sha512-6woyXh+1AQLeLKeus3spoi5MaS6YbWFsDY4QCJZzEO+mri1UrRQssp9PjvoSStvHHpr18frFwLTwq/H/EvNGlA==
 
-"@pioneer-platform/walletconnect@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@pioneer-platform/walletconnect/-/walletconnect-3.0.1.tgz#8fdf384076481e8693f4a69cde65cbf4a2054e91"
-  integrity sha512-VZ9B5VsUub+AP1P3elWBXf8ngl7tikuFugUmp6Oz1fEb3rcOMzjSRi7mLO2+40T6fn7JtRpcOj33TPWFYCLGrg==
+"@pioneer-platform/walletconnect@^3.0.2":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@pioneer-platform/walletconnect/-/walletconnect-3.0.3.tgz#f53dca7deea562afd36ed73b13299aa5898eac00"
+  integrity sha512-6R9uJHfMxMA6bAv87ERkGzZqTwpcH3bg1MdM+vf9ztpsCtje7B9Xv/ixTviMGZzoSA7sJYaYaL8MTPfitxLEIg==
   dependencies:
     "@pioneer-platform/types" "3.0.1"
     "@walletconnect/modal-sign-html" "^2.6.1"
@@ -8107,11 +8100,6 @@ human-signals@^4.3.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-4.3.1.tgz#ab7f811e851fca97ffbd2c1fe9a958964de321b2"
   integrity sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==
 
-husky@^8.0.3:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.3.tgz#4936d7212e46d1dea28fef29bb3a108872cd9184"
-  integrity sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==
-
 idna-uts46-hx@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/idna-uts46-hx/-/idna-uts46-hx-2.3.1.tgz#a1dc5c4df37eee522bf66d969cc980e00e8711f9"
@@ -11227,10 +11215,10 @@ swagger-client@^3.19.8:
     traverse "~0.6.6"
     url "~0.11.0"
 
-swapkit-provider@0.2.38:
-  version "0.2.38"
-  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.38.tgz#a048e323045d28b409b084ecede70643197c5034"
-  integrity sha512-FcziiN8+Z6PQPatNNnffAoiK/3IG9b3RQwS1EdqAM8yg2wlKxbnvqXNcWo/tnt3D9zzHz+EiboWJKeqtkwjESg==
+swapkit-provider@0.2.39:
+  version "0.2.39"
+  resolved "https://registry.yarnpkg.com/swapkit-provider/-/swapkit-provider-0.2.39.tgz#539cac09020c09ef2f79ac47fb8524dc6973b5f7"
+  integrity sha512-G+2dAwjQkk48xUQtV1ukRdorP3hNU4lpqK4Y9cFS9L56ePaREfickXEt0Od8Ok2jabZvj5pGzOqky7JPetd+WQ==
   dependencies:
     "@chakra-ui/icons" "^2.0.19"
     "@chakra-ui/react" "^2.6.0"
@@ -11247,17 +11235,15 @@ swapkit-provider@0.2.38:
     "@pioneer-platform/ledger" "^3.0.1"
     "@pioneer-platform/metamask" "^3.0.1"
     "@pioneer-platform/okx" "^3.0.1"
-    "@pioneer-platform/pioneer-client" latest
-    "@pioneer-platform/pioneer-coins" latest
     "@pioneer-platform/swapkit-api" "^3.0.1"
-    "@pioneer-platform/swapkit-core" "^3.0.1"
+    "@pioneer-platform/swapkit-core" "^3.0.2"
     "@pioneer-platform/swapkit-entities" "^3.0.1"
     "@pioneer-platform/toolbox-cosmos" "^3.0.1"
     "@pioneer-platform/toolbox-evm" "^3.0.1"
     "@pioneer-platform/toolbox-utxo" "^3.0.1"
     "@pioneer-platform/trezor" "^3.0.1"
     "@pioneer-platform/types" "^3.0.1"
-    "@pioneer-platform/walletconnect" "^3.0.1"
+    "@pioneer-platform/walletconnect" "^3.0.2"
     "@pioneer-platform/xdefi" "^3.0.1"
     "@types/uuid" "^9.0.1"
     assert "^2.0.0"
