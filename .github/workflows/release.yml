@@ -1,22 +1,38 @@
-name: Release
+name: Build and Upload to DigitalOcean Spaces
 
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main  # Replace with your main branch name
 
 jobs:
-  release:
+  build-and-upload:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 20.1.0  # Use Node.js version 20.1.0
 
-      - run: npx changelogithub
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm  # Install pnpm globally
+          pnpm install         # Install project dependencies using pnpm
+
+      - name: Build Web Project
+        run: pnpm run build  # Modify this command according to your project setup
+
+      - name: Upload to DigitalOcean Spaces
+        run: |
+          # Configure s3cmd with your DigitalOcean Spaces credentials
+          s3cmd --configure --access_key=YOUR_ACCESS_KEY --secret_key=YOUR_SECRET_KEY
+          
+          # Upload the contents of the "dist" directory to your Spaces bucket
+          s3cmd put -r dist/* s3://your-space-name/0.0.1/  # Modify as needed
+
+      - name: Cleanup
+        run: pnpm install  # Clean up project dependencies using pnpm
